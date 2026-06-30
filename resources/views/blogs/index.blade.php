@@ -2,11 +2,210 @@
     @section('title', 'Health Blog - TNC Medflow')
     @section('meta_description', "Read health insights, tips, and news from TNC Medflow's health blog.")
 
-    <div class="breadcrumb-section"><div class="container"><div class="breadcrumb-block secondary"><a class="breadcrumb-link" href="/home">Home</a><div>/</div><div>Blog Left Sidebar</div></div></div></div><section class="default-section"><div class="container"><div class="w-layout-grid two-column-flex"><div class="left-sidebar-wrapper"><div class="sidebar main-sidebar"><div class="sidebar-title-wrapper"><h3 class="sidebar-title">Latest Posts</h3></div><div class="w-dyn-list"><div class="related-post-body w-dyn-items" role="list"><div class="related-post-block w-dyn-item" role="listitem"><a class="mask related-images w-inline-block" href="/blogs/a-guide-to-managing-diabetes-tips-for-a-balanced-lifestyle"><img alt="" class="related-image" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d307b3cdde306379d9_650a867a37d9816c7cc189e1_image.png" width="70"/></a><a class="text-limit-masking margin-top-5px w-inline-block" href="/blogs/a-guide-to-managing-diabetes-tips-for-a-balanced-lifestyle"><h3 class="related-post-title">A Guide to Managing Diabetes: Tips for a Balanced Lifestyle</h3></a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="mask related-images w-inline-block" href="/blogs/tips-for-maintaining-vitality-in-your-golden-years"><img alt="" class="related-image" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d5861b944ecf7ac1ae_650a867a37d9816c7cc189e4_image%2520(5).png" width="70"/></a><a class="text-limit-masking margin-top-5px w-inline-block" href="/blogs/tips-for-maintaining-vitality-in-your-golden-years"><h3 class="related-post-title">Tips for Maintaining Vitality in Your Golden Years</h3></a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="mask related-images w-inline-block" href="/blogs/recognizing-the-signs-of-stroke-acting-fast-can-save-lives"><img alt="" class="related-image" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d307b3cdde30637aa9_650a867a37d9816c7cc189e3_image%2520(2).png" width="70"/></a><a class="text-limit-masking margin-top-5px w-inline-block" href="/blogs/recognizing-the-signs-of-stroke-acting-fast-can-save-lives"><h3 class="related-post-title">Recognizing the Signs of Stroke: Acting FAST Can Save Lives</h3></a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="mask related-images w-inline-block" href="/blogs/the-importance-of-vaccinations-protecting-yourself"><img alt="" class="related-image" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d302036eeeaa822976_650a867a37d9816c7cc189e5_image%2520(6).png" width="70"/></a><a class="text-limit-masking margin-top-5px w-inline-block" href="/blogs/the-importance-of-vaccinations-protecting-yourself"><h3 class="related-post-title">The Importance of Vaccinations: Protecting Yourself</h3></a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="mask related-images w-inline-block" href="/blogs/the-benefits-of-regular-exercise-for-mental-physical-well-being"><img alt="" class="related-image" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d36beb5ddf60660434_650a867a37d9816c7cc189e2_image%2520(1).png" width="70"/></a><a class="text-limit-masking margin-top-5px w-inline-block" href="/blogs/the-benefits-of-regular-exercise-for-mental-physical-well-being"><h3 class="related-post-title">The Benefits of Regular Exercise for Mental &amp; Physical Well-Being</h3></a></div></div></div></div><div class="sidebar main-sidebar"><div class="sidebar-title-wrapper categories"><h3 class="sidebar-title categories">Categories</h3></div><div class="w-dyn-list"><div class="categories-block w-dyn-items" role="list"><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/tips-tricks">Tips &amp; Tricks</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/surgery">Surgery</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/neurology-department">Neurology Department</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/medical-help">Medical Help</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/media-gallery">Media &amp; Gallery</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/health-tips">Health Tips</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/life-style">Life Style</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/doctor-lifestyle">Doctor Lifestyle</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/health-news">Health News</a></div></div></div><div class="white-border-gap categories"></div></div><div class="sidebar main-sidebar"><div class="sidebar-title-wrapper categories"><h3 class="sidebar-title categories">Tags</h3></div><div class="w-dyn-list"><div class="tags-sidebar-block w-dyn-items" role="list">
-                @foreach(\App\Models\Tag::all() as $tag)
-                <div class="w-dyn-item" role="listitem">
-                    <a class="tag-button sidebar-design" href="{{ route('blog.index', ['tag' => $tag->slug]) }}">{{ $tag->name }}</a>
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="breadcrumb-block secondary"><a class="breadcrumb-link" href="/home">Home</a>
+                <div>/</div>
+                <div>Blog Left Sidebar</div>
+            </div>
+        </div>
+    </div>
+    <section class="default-section">
+        <div class="container">
+            <div class="w-layout-grid two-column-flex">
+                <div class="left-sidebar-wrapper">
+                    <div class="sidebar main-sidebar">
+                        <div class="sidebar-title-wrapper">
+                            <h3 class="sidebar-title">Latest Posts</h3>
+                        </div>
+                        <div class="w-dyn-list">
+                            <div class="related-post-body w-dyn-items" role="list">
+                                <div class="related-post-block w-dyn-item" role="listitem"><a
+                                        class="mask related-images w-inline-block"
+                                        href="/blogs/a-guide-to-managing-diabetes-tips-for-a-balanced-lifestyle"><img
+                                            alt="" class="related-image" loading="lazy"
+                                            src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d307b3cdde306379d9_650a867a37d9816c7cc189e1_image.png"
+                                            width="70" /></a><a class="text-limit-masking margin-top-5px w-inline-block"
+                                        href="/blogs/a-guide-to-managing-diabetes-tips-for-a-balanced-lifestyle">
+                                        <h3 class="related-post-title">A Guide to Managing Diabetes: Tips for a Balanced
+                                            Lifestyle</h3>
+                                    </a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a
+                                        class="mask related-images w-inline-block"
+                                        href="/blogs/tips-for-maintaining-vitality-in-your-golden-years"><img alt=""
+                                            class="related-image" loading="lazy"
+                                            src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d5861b944ecf7ac1ae_650a867a37d9816c7cc189e4_image%2520(5).png"
+                                            width="70" /></a><a class="text-limit-masking margin-top-5px w-inline-block"
+                                        href="/blogs/tips-for-maintaining-vitality-in-your-golden-years">
+                                        <h3 class="related-post-title">Tips for Maintaining Vitality in Your Golden
+                                            Years</h3>
+                                    </a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a
+                                        class="mask related-images w-inline-block"
+                                        href="/blogs/recognizing-the-signs-of-stroke-acting-fast-can-save-lives"><img
+                                            alt="" class="related-image" loading="lazy"
+                                            src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d307b3cdde30637aa9_650a867a37d9816c7cc189e3_image%2520(2).png"
+                                            width="70" /></a><a class="text-limit-masking margin-top-5px w-inline-block"
+                                        href="/blogs/recognizing-the-signs-of-stroke-acting-fast-can-save-lives">
+                                        <h3 class="related-post-title">Recognizing the Signs of Stroke: Acting FAST Can
+                                            Save Lives</h3>
+                                    </a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a
+                                        class="mask related-images w-inline-block"
+                                        href="/blogs/the-importance-of-vaccinations-protecting-yourself"><img alt=""
+                                            class="related-image" loading="lazy"
+                                            src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d302036eeeaa822976_650a867a37d9816c7cc189e5_image%2520(6).png"
+                                            width="70" /></a><a class="text-limit-masking margin-top-5px w-inline-block"
+                                        href="/blogs/the-importance-of-vaccinations-protecting-yourself">
+                                        <h3 class="related-post-title">The Importance of Vaccinations: Protecting
+                                            Yourself</h3>
+                                    </a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a
+                                        class="mask related-images w-inline-block"
+                                        href="/blogs/the-benefits-of-regular-exercise-for-mental-physical-well-being"><img
+                                            alt="" class="related-image" loading="lazy"
+                                            src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d36beb5ddf60660434_650a867a37d9816c7cc189e2_image%2520(1).png"
+                                            width="70" /></a><a class="text-limit-masking margin-top-5px w-inline-block"
+                                        href="/blogs/the-benefits-of-regular-exercise-for-mental-physical-well-being">
+                                        <h3 class="related-post-title">The Benefits of Regular Exercise for Mental &amp;
+                                            Physical Well-Being</h3>
+                                    </a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar main-sidebar">
+                        <div class="sidebar-title-wrapper categories">
+                            <h3 class="sidebar-title categories">Categories</h3>
+                        </div>
+                        <div class="w-dyn-list">
+                            <div class="categories-block w-dyn-items" role="list">
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/tips-tricks">Tips &amp; Tricks</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/surgery">Surgery</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/neurology-department">Neurology Department</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/medical-help">Medical Help</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/media-gallery">Media &amp; Gallery</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/health-tips">Health Tips</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/life-style">Life Style</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/doctor-lifestyle">Doctor Lifestyle</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/health-news">Health News</a></div>
+                            </div>
+                        </div>
+                        <div class="white-border-gap categories"></div>
+                    </div>
+                    <div class="sidebar main-sidebar">
+                        <div class="sidebar-title-wrapper categories">
+                            <h3 class="sidebar-title categories">Tags</h3>
+                        </div>
+                        <div class="w-dyn-list">
+                            <div class="tags-sidebar-block w-dyn-items" role="list">
+                                @foreach(\App\Models\Tag::all() as $tag)
+                                    <div class="w-dyn-item" role="listitem">
+                                        <a class="tag-button sidebar-design"
+                                            href="{{ route('blog.index', ['tag' => $tag->slug]) }}">{{ $tag->name }}</a>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                @endforeach
-            </div></div></div></div><div class="w-dyn-list" id="w-node-_5c8f830a-a1da-a99f-c17d-55186496a040-d8f60aa9"><div class="blog-posts-grid w-dyn-items" role="list"><div class="w-dyn-item" role="listitem"><div class="blog-post-card"><a class="mask border-radius-10px w-inline-block" href="/blogs/a-guide-to-managing-diabetes-tips-for-a-balanced-lifestyle"><img alt="" class="blog-card-thumbnail" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d307b3cdde306379d9_650a867a37d9816c7cc189e1_image.png" width="70"/></a><a class="w-inline-block" href="/blogs/a-guide-to-managing-diabetes-tips-for-a-balanced-lifestyle"><h3 class="blog-title blog-page">A Guide to Managing Diabetes: Tips for a Balanced Lifestyle</h3></a><a class="blog-card-category" href="/blog-categories/health-news">Health News</a></div></div><div class="w-dyn-item" role="listitem"><div class="blog-post-card"><a class="mask border-radius-10px w-inline-block" href="/blogs/breaking-the-stigma-mental-health-matters-and-how-to-seek-help"><img alt="" class="blog-card-thumbnail" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d3e8773232009565d5_64fff606cb19102a6a746942_image%2520(4).png" width="70"/></a><a class="w-inline-block" href="/blogs/breaking-the-stigma-mental-health-matters-and-how-to-seek-help"><h3 class="blog-title blog-page">Breaking the Stigma: Mental Health Matters and How to Seek Help</h3></a><a class="blog-card-category" href="/blog-categories/health-news">Health News</a></div></div><div class="w-dyn-item" role="listitem"><div class="blog-post-card"><a class="mask border-radius-10px w-inline-block" href="/blogs/navigating-seasonal-allergies-tips-for-a-sneezing-free-spring"><img alt="" class="blog-card-thumbnail" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d388780bacbd057480_650a867a37d9816c7cc189df_towfiqu-barbhuiya-NwIExsCqXdM-unsplash.jpeg" width="70"/></a><a class="w-inline-block" href="/blogs/navigating-seasonal-allergies-tips-for-a-sneezing-free-spring"><h3 class="blog-title blog-page">Navigating Seasonal Allergies: Tips for a Sneezing Free Spring</h3></a><a class="blog-card-category" href="/blog-categories/health-tips">Health Tips</a></div></div><div class="w-dyn-item" role="listitem"><div class="blog-post-card"><a class="mask border-radius-10px w-inline-block" href="/blogs/recognizing-the-signs-of-stroke-acting-fast-can-save-lives"><img alt="" class="blog-card-thumbnail" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d307b3cdde30637aa9_650a867a37d9816c7cc189e3_image%2520(2).png" width="70"/></a><a class="w-inline-block" href="/blogs/recognizing-the-signs-of-stroke-acting-fast-can-save-lives"><h3 class="blog-title blog-page">Recognizing the Signs of Stroke: Acting FAST Can Save Lives</h3></a><a class="blog-card-category" href="/blog-categories/medical-help">Medical Help</a></div></div><div class="w-dyn-item" role="listitem"><div class="blog-post-card"><a class="mask border-radius-10px w-inline-block" href="/blogs/the-benefits-of-regular-exercise-for-mental-physical-well-being"><img alt="" class="blog-card-thumbnail" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d36beb5ddf60660434_650a867a37d9816c7cc189e2_image%2520(1).png" width="70"/></a><a class="w-inline-block" href="/blogs/the-benefits-of-regular-exercise-for-mental-physical-well-being"><h3 class="blog-title blog-page">The Benefits of Regular Exercise for Mental &amp; Physical Well-Being</h3></a><a class="blog-card-category" href="/blog-categories/tips-tricks">Tips &amp; Tricks</a></div></div><div class="w-dyn-item" role="listitem"><div class="blog-post-card"><a class="mask border-radius-10px w-inline-block" href="/blogs/the-importance-of-vaccinations-protecting-yourself"><img alt="" class="blog-card-thumbnail" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d302036eeeaa822976_650a867a37d9816c7cc189e5_image%2520(6).png" width="70"/></a><a class="w-inline-block" href="/blogs/the-importance-of-vaccinations-protecting-yourself"><h3 class="blog-title blog-page">The Importance of Vaccinations: Protecting Yourself</h3></a><a class="blog-card-category" href="/blog-categories/media-gallery">Media &amp; Gallery</a></div></div><div class="w-dyn-item" role="listitem"><div class="blog-post-card"><a class="mask border-radius-10px w-inline-block" href="/blogs/tips-for-maintaining-vitality-in-your-golden-years"><img alt="" class="blog-card-thumbnail" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d5861b944ecf7ac1ae_650a867a37d9816c7cc189e4_image%2520(5).png" width="70"/></a><a class="w-inline-block" href="/blogs/tips-for-maintaining-vitality-in-your-golden-years"><h3 class="blog-title blog-page">Tips for Maintaining Vitality in Your Golden Years</h3></a><a class="blog-card-category" href="/blog-categories/medical-help">Medical Help</a></div></div></div></div></div></div></section>
+                <div class="w-dyn-list" id="w-node-_5c8f830a-a1da-a99f-c17d-55186496a040-d8f60aa9">
+                    <div class="blog-posts-grid w-dyn-items" role="list">
+                        <div class="w-dyn-item" role="listitem">
+                            <div class="blog-post-card"><a class="mask border-radius-10px w-inline-block"
+                                    href="/blogs/a-guide-to-managing-diabetes-tips-for-a-balanced-lifestyle"><img alt=""
+                                        class="blog-card-thumbnail" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d307b3cdde306379d9_650a867a37d9816c7cc189e1_image.png"
+                                        width="70" /></a><a class="w-inline-block"
+                                    href="/blogs/a-guide-to-managing-diabetes-tips-for-a-balanced-lifestyle">
+                                    <h3 class="blog-title blog-page">A Guide to Managing Diabetes: Tips for a Balanced
+                                        Lifestyle</h3>
+                                </a><a class="blog-card-category" href="/blog-categories/health-news">Health News</a>
+                            </div>
+                        </div>
+                        <div class="w-dyn-item" role="listitem">
+                            <div class="blog-post-card"><a class="mask border-radius-10px w-inline-block"
+                                    href="/blogs/breaking-the-stigma-mental-health-matters-and-how-to-seek-help"><img
+                                        alt="" class="blog-card-thumbnail" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d3e8773232009565d5_64fff606cb19102a6a746942_image%2520(4).png"
+                                        width="70" /></a><a class="w-inline-block"
+                                    href="/blogs/breaking-the-stigma-mental-health-matters-and-how-to-seek-help">
+                                    <h3 class="blog-title blog-page">Breaking the Stigma: Mental Health Matters and How
+                                        to Seek Help</h3>
+                                </a><a class="blog-card-category" href="/blog-categories/health-news">Health News</a>
+                            </div>
+                        </div>
+                        <div class="w-dyn-item" role="listitem">
+                            <div class="blog-post-card"><a class="mask border-radius-10px w-inline-block"
+                                    href="/blogs/navigating-seasonal-allergies-tips-for-a-sneezing-free-spring"><img
+                                        alt="" class="blog-card-thumbnail" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d388780bacbd057480_650a867a37d9816c7cc189df_towfiqu-barbhuiya-NwIExsCqXdM-unsplash.jpeg"
+                                        width="70" /></a><a class="w-inline-block"
+                                    href="/blogs/navigating-seasonal-allergies-tips-for-a-sneezing-free-spring">
+                                    <h3 class="blog-title blog-page">Navigating Seasonal Allergies: Tips for a Sneezing
+                                        Free Spring</h3>
+                                </a><a class="blog-card-category" href="/blog-categories/health-tips">Health Tips</a>
+                            </div>
+                        </div>
+                        <div class="w-dyn-item" role="listitem">
+                            <div class="blog-post-card"><a class="mask border-radius-10px w-inline-block"
+                                    href="/blogs/recognizing-the-signs-of-stroke-acting-fast-can-save-lives"><img alt=""
+                                        class="blog-card-thumbnail" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d307b3cdde30637aa9_650a867a37d9816c7cc189e3_image%2520(2).png"
+                                        width="70" /></a><a class="w-inline-block"
+                                    href="/blogs/recognizing-the-signs-of-stroke-acting-fast-can-save-lives">
+                                    <h3 class="blog-title blog-page">Recognizing the Signs of Stroke: Acting FAST Can
+                                        Save Lives</h3>
+                                </a><a class="blog-card-category" href="/blog-categories/medical-help">Medical Help</a>
+                            </div>
+                        </div>
+                        <div class="w-dyn-item" role="listitem">
+                            <div class="blog-post-card"><a class="mask border-radius-10px w-inline-block"
+                                    href="/blogs/the-benefits-of-regular-exercise-for-mental-physical-well-being"><img
+                                        alt="" class="blog-card-thumbnail" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d36beb5ddf60660434_650a867a37d9816c7cc189e2_image%2520(1).png"
+                                        width="70" /></a><a class="w-inline-block"
+                                    href="/blogs/the-benefits-of-regular-exercise-for-mental-physical-well-being">
+                                    <h3 class="blog-title blog-page">The Benefits of Regular Exercise for Mental &amp;
+                                        Physical Well-Being</h3>
+                                </a><a class="blog-card-category" href="/blog-categories/tips-tricks">Tips &amp;
+                                    Tricks</a></div>
+                        </div>
+                        <div class="w-dyn-item" role="listitem">
+                            <div class="blog-post-card"><a class="mask border-radius-10px w-inline-block"
+                                    href="/blogs/the-importance-of-vaccinations-protecting-yourself"><img alt=""
+                                        class="blog-card-thumbnail" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d302036eeeaa822976_650a867a37d9816c7cc189e5_image%2520(6).png"
+                                        width="70" /></a><a class="w-inline-block"
+                                    href="/blogs/the-importance-of-vaccinations-protecting-yourself">
+                                    <h3 class="blog-title blog-page">The Importance of Vaccinations: Protecting Yourself
+                                    </h3>
+                                </a><a class="blog-card-category" href="/blog-categories/media-gallery">Media &amp;
+                                    Gallery</a></div>
+                        </div>
+                        <div class="w-dyn-item" role="listitem">
+                            <div class="blog-post-card"><a class="mask border-radius-10px w-inline-block"
+                                    href="/blogs/tips-for-maintaining-vitality-in-your-golden-years"><img alt=""
+                                        class="blog-card-thumbnail" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d5861b944ecf7ac1ae_650a867a37d9816c7cc189e4_image%2520(5).png"
+                                        width="70" /></a><a class="w-inline-block"
+                                    href="/blogs/tips-for-maintaining-vitality-in-your-golden-years">
+                                    <h3 class="blog-title blog-page">Tips for Maintaining Vitality in Your Golden Years
+                                    </h3>
+                                </a><a class="blog-card-category" href="/blog-categories/medical-help">Medical Help</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </x-layout>

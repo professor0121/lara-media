@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AppointmentController as AdminAppointmentController;
 use App\Http\Controllers\Admin\BlogPostController as AdminBlogPostController;
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\DepartmentController as AdminDepartmentController;
 use App\Http\Controllers\Admin\DoctorController as AdminDoctorController;
 use App\Http\Controllers\Admin\StaffController as AdminStaffController;
@@ -38,5 +39,6 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('staff', AdminStaffController::class);
     Route::resource('blogs', AdminBlogPostController::class);
     Route::resource('tags', AdminTagController::class);
+    Route::resource('categories', AdminCategoryController::class);
     Route::resource('appointments', AdminAppointmentController::class)->only(['index', 'show', 'destroy']);
 });

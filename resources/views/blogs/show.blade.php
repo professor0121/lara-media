@@ -2,17 +2,234 @@
     @section('title', 'Blog Details - TNC Medflow')
     @section('meta_description', "Read health insights, tips, and news from TNC Medflow's health blog.")
 
-    <div class="breadcrumb-section"><div class="container"><div class="breadcrumb-block secondary"><a class="breadcrumb-link" href="#">Home</a><div>/</div><a class="breadcrumb-link" href="/blog-left-sidbar">Blog</a><div>/</div><div>Navigating Seasonal Allergies: Tips for a Sneezing Free Spring</div></div></div></div><section class="default-section"><div class="container"><div class="two-column-flex reverse"><div class="left-sidebar-wrapper"><div class="sidebar main-sidebar"><div class="sidebar-title-wrapper"><h3 class="sidebar-title">Related Posts</h3></div><div class="w-dyn-list"><div class="related-post-body w-dyn-items" role="list"><div class="related-post-block w-dyn-item" role="listitem"><a class="mask related-images w-inline-block" href="/blogs/a-guide-to-managing-diabetes-tips-for-a-balanced-lifestyle"><img alt="A Guide to Managing Diabetes: Tips for a Balanced Lifestyle" class="related-image" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d307b3cdde306379d9_650a867a37d9816c7cc189e1_image.png" width="70"/></a><a class="text-limit-masking w-inline-block" href="/blogs/a-guide-to-managing-diabetes-tips-for-a-balanced-lifestyle"><h3 class="related-post-title">A Guide to Managing Diabetes: Tips for a Balanced Lifestyle</h3></a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="mask related-images w-inline-block" href="/blogs/tips-for-maintaining-vitality-in-your-golden-years"><img alt="Tips for Maintaining Vitality in Your Golden Years" class="related-image" loading="lazy" src="{{ $post->image_path }}" width="70"/></a><a class="text-limit-masking w-inline-block" href="/blogs/tips-for-maintaining-vitality-in-your-golden-years"><h3 class="related-post-title">Tips for Maintaining Vitality in Your Golden Years</h3></a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="mask related-images w-inline-block" href="/blogs/recognizing-the-signs-of-stroke-acting-fast-can-save-lives"><img alt="Recognizing the Signs of Stroke: Acting FAST Can Save Lives" class="related-image" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d307b3cdde30637aa9_650a867a37d9816c7cc189e3_image%2520(2).png" width="70"/></a><a class="text-limit-masking w-inline-block" href="/blogs/recognizing-the-signs-of-stroke-acting-fast-can-save-lives"><h3 class="related-post-title">Recognizing the Signs of Stroke: Acting FAST Can Save Lives</h3></a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="mask related-images w-inline-block" href="/blogs/the-importance-of-vaccinations-protecting-yourself"><img alt="The Importance of Vaccinations: Protecting Yourself" class="related-image" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d302036eeeaa822976_650a867a37d9816c7cc189e5_image%2520(6).png" width="70"/></a><a class="text-limit-masking w-inline-block" href="/blogs/the-importance-of-vaccinations-protecting-yourself"><h3 class="related-post-title">The Importance of Vaccinations: Protecting Yourself</h3></a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="mask related-images w-inline-block" href="/blogs/the-benefits-of-regular-exercise-for-mental-physical-well-being"><img alt="The Benefits of Regular Exercise for Mental &amp; Physical Well-Being" class="related-image" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d36beb5ddf60660434_650a867a37d9816c7cc189e2_image%2520(1).png" width="70"/></a><a class="text-limit-masking w-inline-block" href="/blogs/the-benefits-of-regular-exercise-for-mental-physical-well-being"><h3 class="related-post-title">The Benefits of Regular Exercise for Mental &amp; Physical Well-Being</h3></a></div></div></div></div><div class="sidebar main-sidebar"><div class="sidebar-title-wrapper categories"><h3 class="sidebar-title categories">Categories</h3></div><div class="w-dyn-list"><div class="categories-block w-dyn-items" role="list"><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/tips-tricks">Tips &amp; Tricks</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/surgery">Surgery</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/neurology-department">Neurology Department</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/medical-help">Medical Help</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/media-gallery">Media &amp; Gallery</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/health-tips">Health Tips</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/life-style">Life Style</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/doctor-lifestyle">Doctor Lifestyle</a></div><div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item" href="/blog-categories/health-news">Health News</a></div></div></div><div class="white-border-gap categories"></div></div><div class="sidebar main-sidebar"><div class="sidebar-title-wrapper categories"><h3 class="sidebar-title categories">Tags</h3></div><div class="w-dyn-list"><div class="tags-sidebar-block w-dyn-items" role="list">
-                @foreach(\App\Models\Tag::all() as $tag)
-                <div class="w-dyn-item" role="listitem">
-                    <a class="tag-button sidebar-design" href="{{ route('blog.index', ['tag' => $tag->slug]) }}">{{ $tag->name }}</a>
-                </div>
-                @endforeach
-            </div></div></div></div><div class="blog-post-wrapper"><div class="blog-post-container"><img alt="Navigating Seasonal Allergies: Tips for a Sneezing Free Spring" class="blog-post-image" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d388780bacbd057480_650a867a37d9816c7cc189df_towfiqu-barbhuiya-NwIExsCqXdM-unsplash.jpeg" width="70"/><div class="blog-info-block"><a class="author-block w-inline-block" href="/authors/dr-robert-fox"><img alt="" class="author-image" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab299ed3778abeac747dc_650a867a37d9816c7cc189e0_Rectangle%252054.png" width="70"/><div class="text-link">Dr. Robert Fox</div></a><div class="separator"></div><div>July 3, 2025</div><div class="separator"></div><a class="text-link" href="/blog-categories/health-tips">Health Tips</a></div><h1 class="blog-post-title">Navigating Seasonal Allergies: Tips for a Sneezing Free Spring</h1><p>Spring brings not just the beauty of blossoms but also the woes of seasonal allergies. In our comprehensive guide, discover practical tips to keep those sneezes and sniffles at bay. From managing pollen exposure to understanding allergy triggers, we've got you covered. Learn how to create an allergy-friendly home environment, find relief through over-the-counter remedies, and when it's time to seek professional help. Embrace spring with confidence, knowing you can enjoy its wonders without the discomfort of allergies.</p><div class="quote-block"><blockquote class="block-quote">“Remember that everyone's allergies are different, and what works for one person may not work for another.”</blockquote><img alt="" class="quote-svg-blog" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650acad846a18cefd31a823e_quote-left%201.svg" width="70"/></div><div class="blog-description w-richtext"><h3>Surviving Spring Allergies</h3><p>Spring is a beautiful time of year, but for allergy sufferers, it can be a season filled with sneezing, itchy eyes, and congestion. In this comprehensive guide, we'll explore the various ways you can survive spring allergies and enjoy the season to the fullest.<br/>‍<br/>The first step in managing spring allergies is identifying your specific triggers. Whether it's pollen, mold, or pet dander, understanding what sets off your symptoms is crucial.<br/><br/></p><figure class="w-richtext-align-fullwidth w-richtext-figure-type-image" style="max-width:1240pxpx"><div><img alt="" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d3e8773232009565fe_650a867a37d9816c7cc189de_64fef77fb3ab6d8b20644c31_Rectangle%25252051.png"/></div></figure><h3>Monitor Pollen Levels:<br/></h3><p>Pollen allergies can turn a beautiful day into a sneezing and itching nightmare. In this section, we'll dive into the importance of monitoring pollen levels and how it can be a game-changer for allergy sufferers.</p><ol role="list" start=""><li>Keep Windows Closed</li><li>Use Air Conditioning</li><li>Avoid Line Drying</li><li>Shower and Change Clothes</li><li>Consult an Allergist</li></ol><p>We'll start by explaining what pollen counts are and how they affect your allergy symptoms. Different types of pollen from trees, grasses, and weeds can trigger allergies, and their levels vary throughout the year.<br/><br/>Learn how to access local pollen forecasts. Many weather websites and apps provide daily pollen forecasts specific to your area. We'll guide you on where to find this information and how to interpret it.<br/></p></div></div><div class="blog-post-container"><div class="post-share-container"><div class="share-icons-wrapper"><div class="title">Share on:</div><div class="share-icons-block"><div class="social-share-icon"></div><div class="social-share-icon twitter"></div><div class="social-share-icon linkedin"></div><div class="social-share-icon pinterest"></div><div class="social-share-icon whatsapp"></div></div></div><div class="w-dyn-list"><div class="tags-icon-container w-dyn-items" role="list">
-                    @foreach($post->tags as $tag)
-                    <div class="w-dyn-item" role="listitem">
-                        <a class="tag-button" href="{{ route('blog.index', ['tag' => $tag->slug]) }}">{{ $tag->name }}</a>
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="breadcrumb-block secondary"><a class="breadcrumb-link" href="#">Home</a>
+                <div>/</div><a class="breadcrumb-link" href="/blog-left-sidbar">Blog</a>
+                <div>/</div>
+                <div>Navigating Seasonal Allergies: Tips for a Sneezing Free Spring</div>
+            </div>
+        </div>
+    </div>
+    <section class="default-section">
+        <div class="container">
+            <div class="two-column-flex reverse">
+                <div class="left-sidebar-wrapper">
+                    <div class="sidebar main-sidebar">
+                        <div class="sidebar-title-wrapper">
+                            <h3 class="sidebar-title">Related Posts</h3>
+                        </div>
+                        <div class="w-dyn-list">
+                            <div class="related-post-body w-dyn-items" role="list">
+                                <div class="related-post-block w-dyn-item" role="listitem"><a
+                                        class="mask related-images w-inline-block"
+                                        href="/blogs/a-guide-to-managing-diabetes-tips-for-a-balanced-lifestyle"><img
+                                            alt="A Guide to Managing Diabetes: Tips for a Balanced Lifestyle"
+                                            class="related-image" loading="lazy"
+                                            src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d307b3cdde306379d9_650a867a37d9816c7cc189e1_image.png"
+                                            width="70" /></a><a class="text-limit-masking w-inline-block"
+                                        href="/blogs/a-guide-to-managing-diabetes-tips-for-a-balanced-lifestyle">
+                                        <h3 class="related-post-title">A Guide to Managing Diabetes: Tips for a Balanced
+                                            Lifestyle</h3>
+                                    </a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a
+                                        class="mask related-images w-inline-block"
+                                        href="/blogs/tips-for-maintaining-vitality-in-your-golden-years"><img
+                                            alt="Tips for Maintaining Vitality in Your Golden Years"
+                                            class="related-image" loading="lazy" src="{{ $post->image_path }}"
+                                            width="70" /></a><a class="text-limit-masking w-inline-block"
+                                        href="/blogs/tips-for-maintaining-vitality-in-your-golden-years">
+                                        <h3 class="related-post-title">Tips for Maintaining Vitality in Your Golden
+                                            Years</h3>
+                                    </a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a
+                                        class="mask related-images w-inline-block"
+                                        href="/blogs/recognizing-the-signs-of-stroke-acting-fast-can-save-lives"><img
+                                            alt="Recognizing the Signs of Stroke: Acting FAST Can Save Lives"
+                                            class="related-image" loading="lazy"
+                                            src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d307b3cdde30637aa9_650a867a37d9816c7cc189e3_image%2520(2).png"
+                                            width="70" /></a><a class="text-limit-masking w-inline-block"
+                                        href="/blogs/recognizing-the-signs-of-stroke-acting-fast-can-save-lives">
+                                        <h3 class="related-post-title">Recognizing the Signs of Stroke: Acting FAST Can
+                                            Save Lives</h3>
+                                    </a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a
+                                        class="mask related-images w-inline-block"
+                                        href="/blogs/the-importance-of-vaccinations-protecting-yourself"><img
+                                            alt="The Importance of Vaccinations: Protecting Yourself"
+                                            class="related-image" loading="lazy"
+                                            src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d302036eeeaa822976_650a867a37d9816c7cc189e5_image%2520(6).png"
+                                            width="70" /></a><a class="text-limit-masking w-inline-block"
+                                        href="/blogs/the-importance-of-vaccinations-protecting-yourself">
+                                        <h3 class="related-post-title">The Importance of Vaccinations: Protecting
+                                            Yourself</h3>
+                                    </a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a
+                                        class="mask related-images w-inline-block"
+                                        href="/blogs/the-benefits-of-regular-exercise-for-mental-physical-well-being"><img
+                                            alt="The Benefits of Regular Exercise for Mental &amp; Physical Well-Being"
+                                            class="related-image" loading="lazy"
+                                            src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d36beb5ddf60660434_650a867a37d9816c7cc189e2_image%2520(1).png"
+                                            width="70" /></a><a class="text-limit-masking w-inline-block"
+                                        href="/blogs/the-benefits-of-regular-exercise-for-mental-physical-well-being">
+                                        <h3 class="related-post-title">The Benefits of Regular Exercise for Mental &amp;
+                                            Physical Well-Being</h3>
+                                    </a></div>
+                            </div>
+                        </div>
                     </div>
-                    @endforeach
-                </div></div></div></div><div class="blog-post-container author-information"><a class="author-image-wrapper w-inline-block" href="/authors/dr-robert-fox"><img alt="" class="author-thumbnail" loading="lazy" src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab299ed3778abeac747dc_650a867a37d9816c7cc189e0_Rectangle%252054.png" width="70"/></a><div class="author-information-block"><a class="w-inline-block" href="/authors/dr-robert-fox"><h4 class="author-title">Dr. Robert Fox</h4></a><div class="author-degree">MBBS, FCS, New TNC Hospital, Hawaii 5204</div><p>Meet our dedicated doctors at TNC Hospital - experienced, compassionate, and committed to your well-being. Your health is our priority.</p><div class="author-share-icons-container"><a class="author-social-icon" href="http://www.Facebook.com"></a><a class="author-social-icon twitter" href="http://www.Twitter.com"></a><a class="author-social-icon linkedin" href="http://www.Linkedin.com"></a><a class="author-social-icon pinterest" href="http://www.pinterest.com"></a><a class="author-social-icon whatsapp" href="https://web.whatsapp.com/"></a></div></div></div></div></div></div></section>
+                    <div class="sidebar main-sidebar">
+                        <div class="sidebar-title-wrapper categories">
+                            <h3 class="sidebar-title categories">Categories</h3>
+                        </div>
+                        <div class="w-dyn-list">
+                            <div class="categories-block w-dyn-items" role="list">
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/tips-tricks">Tips &amp; Tricks</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/surgery">Surgery</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/neurology-department">Neurology Department</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/medical-help">Medical Help</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/media-gallery">Media &amp; Gallery</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/health-tips">Health Tips</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/life-style">Life Style</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/doctor-lifestyle">Doctor Lifestyle</a></div>
+                                <div class="related-post-block w-dyn-item" role="listitem"><a class="categories-item"
+                                        href="/blog-categories/health-news">Health News</a></div>
+                            </div>
+                        </div>
+                        <div class="white-border-gap categories"></div>
+                    </div>
+                    <div class="sidebar main-sidebar">
+                        <div class="sidebar-title-wrapper categories">
+                            <h3 class="sidebar-title categories">Tags</h3>
+                        </div>
+                        <div class="w-dyn-list">
+                            <div class="tags-sidebar-block w-dyn-items" role="list">
+                                @foreach(\App\Models\Tag::all() as $tag)
+                                    <div class="w-dyn-item" role="listitem">
+                                        <a class="tag-button sidebar-design"
+                                            href="{{ route('blog.index', ['tag' => $tag->slug]) }}">{{ $tag->name }}</a>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-post-wrapper">
+                    <div class="blog-post-container"><img
+                            alt="Navigating Seasonal Allergies: Tips for a Sneezing Free Spring" class="blog-post-image"
+                            loading="lazy"
+                            src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d388780bacbd057480_650a867a37d9816c7cc189df_towfiqu-barbhuiya-NwIExsCqXdM-unsplash.jpeg"
+                            width="70" />
+                        <div class="blog-info-block"><a class="author-block w-inline-block"
+                                href="/authors/dr-robert-fox"><img alt="" class="author-image" loading="lazy"
+                                    src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab299ed3778abeac747dc_650a867a37d9816c7cc189e0_Rectangle%252054.png"
+                                    width="70" />
+                                <div class="text-link">Dr. Robert Fox</div>
+                            </a>
+                            <div class="separator"></div>
+                            <div>July 3, 2025</div>
+                            <div class="separator"></div><a class="text-link" href="/blog-categories/health-tips">Health
+                                Tips</a>
+                        </div>
+                        <h1 class="blog-post-title">Navigating Seasonal Allergies: Tips for a Sneezing Free Spring</h1>
+                        <p>Spring brings not just the beauty of blossoms but also the woes of seasonal allergies. In our
+                            comprehensive guide, discover practical tips to keep those sneezes and sniffles at bay. From
+                            managing pollen exposure to understanding allergy triggers, we've got you covered. Learn how
+                            to create an allergy-friendly home environment, find relief through over-the-counter
+                            remedies, and when it's time to seek professional help. Embrace spring with confidence,
+                            knowing you can enjoy its wonders without the discomfort of allergies.</p>
+                        <div class="quote-block">
+                            <blockquote class="block-quote">“Remember that everyone's allergies are different, and what
+                                works for one person may not work for another.”</blockquote><img alt=""
+                                class="quote-svg-blog" loading="lazy"
+                                src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650acad846a18cefd31a823e_quote-left%201.svg"
+                                width="70" />
+                        </div>
+                        <div class="blog-description w-richtext">
+                            <h3>Surviving Spring Allergies</h3>
+                            <p>Spring is a beautiful time of year, but for allergy sufferers, it can be a season filled
+                                with sneezing, itchy eyes, and congestion. In this comprehensive guide, we'll explore
+                                the various ways you can survive spring allergies and enjoy the season to the
+                                fullest.<br />‍<br />The first step in managing spring allergies is identifying your
+                                specific triggers. Whether it's pollen, mold, or pet dander, understanding what sets off
+                                your symptoms is crucial.<br /><br /></p>
+                            <figure class="w-richtext-align-fullwidth w-richtext-figure-type-image"
+                                style="max-width:1240pxpx">
+                                <div><img alt=""
+                                        src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d3e8773232009565fe_650a867a37d9816c7cc189de_64fef77fb3ab6d8b20644c31_Rectangle%25252051.png" />
+                                </div>
+                            </figure>
+                            <h3>Monitor Pollen Levels:<br /></h3>
+                            <p>Pollen allergies can turn a beautiful day into a sneezing and itching nightmare. In this
+                                section, we'll dive into the importance of monitoring pollen levels and how it can be a
+                                game-changer for allergy sufferers.</p>
+                            <ol role="list" start="">
+                                <li>Keep Windows Closed</li>
+                                <li>Use Air Conditioning</li>
+                                <li>Avoid Line Drying</li>
+                                <li>Shower and Change Clothes</li>
+                                <li>Consult an Allergist</li>
+                            </ol>
+                            <p>We'll start by explaining what pollen counts are and how they affect your allergy
+                                symptoms. Different types of pollen from trees, grasses, and weeds can trigger
+                                allergies, and their levels vary throughout the year.<br /><br />Learn how to access
+                                local pollen forecasts. Many weather websites and apps provide daily pollen forecasts
+                                specific to your area. We'll guide you on where to find this information and how to
+                                interpret it.<br /></p>
+                        </div>
+                    </div>
+                    <div class="blog-post-container">
+                        <div class="post-share-container">
+                            <div class="share-icons-wrapper">
+                                <div class="title">Share on:</div>
+                                <div class="share-icons-block">
+                                    <div class="social-share-icon"></div>
+                                    <div class="social-share-icon twitter"></div>
+                                    <div class="social-share-icon linkedin"></div>
+                                    <div class="social-share-icon pinterest"></div>
+                                    <div class="social-share-icon whatsapp"></div>
+                                </div>
+                            </div>
+                            <div class="w-dyn-list">
+                                <div class="tags-icon-container w-dyn-items" role="list">
+                                    @foreach($post->tags as $tag)
+                                        <div class="w-dyn-item" role="listitem">
+                                            <a class="tag-button"
+                                                href="{{ route('blog.index', ['tag' => $tag->slug]) }}">{{ $tag->name }}</a>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-post-container author-information"><a class="author-image-wrapper w-inline-block"
+                            href="/authors/dr-robert-fox"><img alt="" class="author-thumbnail" loading="lazy"
+                                src="https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab299ed3778abeac747dc_650a867a37d9816c7cc189e0_Rectangle%252054.png"
+                                width="70" /></a>
+                        <div class="author-information-block"><a class="w-inline-block" href="/authors/dr-robert-fox">
+                                <h4 class="author-title">Dr. Robert Fox</h4>
+                            </a>
+                            <div class="author-degree">MBBS, FCS, New TNC Hospital, Hawaii 5204</div>
+                            <p>Meet our dedicated doctors at TNC Hospital - experienced, compassionate, and committed to
+                                your well-being. Your health is our priority.</p>
+                            <div class="author-share-icons-container"><a class="author-social-icon"
+                                    href="http://www.Facebook.com"></a><a class="author-social-icon twitter"
+                                    href="http://www.Twitter.com"></a><a class="author-social-icon linkedin"
+                                    href="http://www.Linkedin.com"></a><a class="author-social-icon pinterest"
+                                    href="http://www.pinterest.com"></a><a class="author-social-icon whatsapp"
+                                    href="https://web.whatsapp.com/"></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </x-layout>

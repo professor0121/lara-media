@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\BlogPost;
+use App\Models\Category;
 use App\Models\Department;
 use App\Models\Doctor;
 use App\Models\GalleryItem;
@@ -158,6 +159,57 @@ class DatabaseSeeder extends Seeder
             'image_path' => 'https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f83_Rectangle%2075%20(3).webp',
         ]);
 
+        Doctor::create([
+            'department_id' => $dermatology->id,
+            'name' => 'Dr. Sarah Jenkins',
+            'slug' => 'dr-sarah-jenkins',
+            'title' => 'Dr.',
+            'specialty' => 'Dermatologist',
+            'bio' => 'Dr. Sarah Jenkins specializes in pediatric and adult dermatology, treating skin disorders with customized treatment plans.',
+            'image_path' => 'https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa4_Rectangle%2075%20(4).webp',
+        ]);
+
+        Doctor::create([
+            'department_id' => $oncology->id,
+            'name' => 'Prof. Dr. David Miller',
+            'slug' => 'prof-dr-david-miller',
+            'title' => 'Prof. Dr.',
+            'specialty' => 'Oncologist',
+            'bio' => 'Prof. Dr. David Miller is dedicated to providing cutting-edge cancer care and leads clinical oncology research projects.',
+            'image_path' => 'https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f93_Rectangle%2075%20(1).webp',
+        ]);
+
+        Doctor::create([
+            'department_id' => $orthopedics->id,
+            'name' => 'Dr. James Carter',
+            'slug' => 'dr-james-carter',
+            'title' => 'Dr.',
+            'specialty' => 'Orthopedic Surgeon',
+            'bio' => 'Dr. James Carter specializes in joint reconstruction and sports medicine, helping patients return to their active lifestyles.',
+            'image_path' => 'https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f9b_Rectangle%2075.webp',
+        ]);
+
+        Doctor::create([
+            'department_id' => $urology->id,
+            'name' => 'Dr. Robert Vance',
+            'slug' => 'dr-robert-vance',
+            'title' => 'Dr.',
+            'specialty' => 'Urologist',
+            'bio' => 'Dr. Robert Vance treats urological and kidney diseases, performing minimally invasive surgeries with outstanding patient outcomes.',
+            'image_path' => 'https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f90_Rectangle%2075%20(2).webp',
+        ]);
+
+        // Seed Categories
+        $catTips = Category::create(['name' => 'Tips & Tricks', 'slug' => 'tips-tricks']);
+        $catSurgery = Category::create(['name' => 'Surgery', 'slug' => 'surgery']);
+        $catNeurology = Category::create(['name' => 'Neurology Department', 'slug' => 'neurology-department']);
+        $catMedical = Category::create(['name' => 'Medical Help', 'slug' => 'medical-help']);
+        $catMedia = Category::create(['name' => 'Media & Gallery', 'slug' => 'media-gallery']);
+        $catHealth = Category::create(['name' => 'Health Tips', 'slug' => 'health-tips']);
+        $catLifestyle = Category::create(['name' => 'Life Style', 'slug' => 'life-style']);
+        $catDoctor = Category::create(['name' => 'Doctor Lifestyle', 'slug' => 'doctor-lifestyle']);
+        $catNews = Category::create(['name' => 'Health News', 'slug' => 'health-news']);
+
         // Seed Tags
         $tagHealth = Tag::create(['name' => 'Health Tips', 'slug' => 'health-tips']);
         $tagMental = Tag::create(['name' => 'Mental Health', 'slug' => 'mental-health']);
@@ -172,6 +224,7 @@ class DatabaseSeeder extends Seeder
             'content' => 'Managing diabetes effectively is key to a long, active, and healthy life. By adopting a balanced lifestyle, individuals with diabetes can control their blood sugar levels, reduce the risk of complications, and improve their overall well-being. Focus on balanced nutrition, regular exercise, monitoring blood glucose, medication management, and regular medical check-ups.',
             'image_path' => 'https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d307b3cdde306379d9_650a867a37d9816c7cc189e1_image.png',
             'published_at' => now()->subDays(3),
+            'category_id' => $catNews->id,
         ]);
         $post1->tags()->sync([$tagNews->id, $tagLifestyle->id]);
 
@@ -182,6 +235,7 @@ class DatabaseSeeder extends Seeder
             'content' => 'Aging is a natural process, but maintaining vitality and energy is highly achievable. Focus on nutrition, physical fitness, mental sharpness, social connection, and routine health screenings to preserve your vitality.',
             'image_path' => 'https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d5861b944ecf7ac1ae_650a867a37d9816c7cc189e4_image%2520(5).png',
             'published_at' => now()->subDays(2),
+            'category_id' => $catMedical->id,
         ]);
         $post2->tags()->sync([$tagHealth->id, $tagLifestyle->id]);
 
@@ -192,6 +246,7 @@ class DatabaseSeeder extends Seeder
             'content' => 'A stroke is a medical emergency that requires prompt action. The FAST acronym stands for: Face drooping, Arm weakness, Speech difficulty, Time to call emergency services. Acting fast minimizes brain damage and improves recovery outcomes.',
             'image_path' => 'https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d307b3cdde30637aa9_650a867a37d9816c7cc189e3_image%2520(2).png',
             'published_at' => now()->subDay(),
+            'category_id' => $catMedical->id,
         ]);
         $post3->tags()->sync([$tagHealth->id, $tagMental->id]);
 
@@ -202,6 +257,7 @@ class DatabaseSeeder extends Seeder
             'content' => 'Spring brings warmth, but also pollen and seasonal allergies. Control your environment, monitor pollen counts, take preventative medications, and wash off allergens to keep your spring sneeze-free.',
             'image_path' => 'https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d5861b944ecf7ac1ae_650a867a37d9816c7cc189e4_image%2520(5).png',
             'published_at' => now(),
+            'category_id' => $catHealth->id,
         ]);
         $post4->tags()->sync([$tagHealth->id]);
 

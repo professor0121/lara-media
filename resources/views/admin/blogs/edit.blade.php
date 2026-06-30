@@ -42,6 +42,15 @@
             <input type="text" id="image_path" name="image_path" value="{{ old('image_path', $post->image_path) }}" required>
         </div>
         <div class="form-group">
+            <label for="category_id">Category</label>
+            <select id="category_id" name="category_id">
+                <option value="">Select Category</option>
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}" {{ old('category_id', $post->category_id) == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
             <label for="tags">Associated Tags</label>
             <select id="tags" name="tags[]" multiple style="height: 120px;">
                 @foreach($tags as $tag)

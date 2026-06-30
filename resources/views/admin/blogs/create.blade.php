@@ -41,6 +41,15 @@
             <input type="text" id="image_path" name="image_path" value="{{ old('image_path', 'https://cdn.prod.website-files.com/650ab1019fb45c5ceb55d927/650ab4d5861b944ecf7ac1ae_650a867a37d9816c7cc189e4_image%2520(5).png') }}" placeholder="Cover image url path" required>
         </div>
         <div class="form-group">
+            <label for="category_id">Category</label>
+            <select id="category_id" name="category_id">
+                <option value="">Select Category</option>
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
             <label for="tags">Associated Tags</label>
             <select id="tags" name="tags[]" multiple style="height: 120px;">
                 @foreach($tags as $tag)

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\BlogPost;
+use App\Models\Category;
 use App\Models\Department;
 use App\Models\Doctor;
 use App\Models\GalleryItem;
+use App\Models\Tag;
 
 class PageController extends Controller
 {
@@ -61,15 +63,34 @@ class PageController extends Controller
     public function blog($slug)
     {
         $post = BlogPost::where('slug', $slug)->firstOrFail();
-        $latestPosts = BlogPost::orderBy('published_at', 'desc')->where('id', '!=', $post->id)->take(3)->get();
+        $latestPosts = BlogPost::orderBy('published_at', 'desc')->where('id', '!=', $post->id)->take(5)->get();
+        $categories = Category::all();
+        $tags = Tag::all();
 
-        return view('blogs.show', compact('post', 'latestPosts'));
+        return view('blogs.show', compact('post', 'latestPosts', 'categories', 'tags'));
     }
 
     public function blogIndex()
     {
-        $posts = BlogPost::orderBy('published_at', 'desc')->paginate(10);
+        $query = BlogPost::query()->orderBy('published_at', 'desc');
 
-        return view('blogs.index', compact('posts'));
+        if (request('category')) {
+            $query->whereHas('category', function ($q) {
+                $q->where('slug', request('category'));
+            });
+        }
+
+        if (request('tag')) {
+            $query->whereHas('tags', function ($q) {
+                $q->where('slug', request('tag'));
+            });
+        }
+
+        $posts = $query->paginate(10)->withQueryString();
+        $categories = Category::all();
+        $tags = Tag::all();
+        $latestPosts = BlogPost::orderBy('published_at', 'desc')->take(5)->get();
+
+        return view('blogs.index', compact('posts', 'categories', 'tags', 'latestPosts'));
     }
 }

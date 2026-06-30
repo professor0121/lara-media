@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\BlogPost;
+use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -20,8 +21,9 @@ class BlogPostController extends Controller
     public function create()
     {
         $tags = Tag::all();
+        $categories = Category::all();
 
-        return view('admin.blogs.create', compact('tags'));
+        return view('admin.blogs.create', compact('tags', 'categories'));
     }
 
     public function store(Request $request)
@@ -33,6 +35,7 @@ class BlogPostController extends Controller
             'content' => 'required|string',
             'image_path' => 'required|string|max:255',
             'published_at' => 'required|date',
+            'category_id' => 'nullable|exists:categories,id',
             'tags' => 'nullable|array',
             'tags.*' => 'exists:tags,id',
         ]);
@@ -46,6 +49,7 @@ class BlogPostController extends Controller
             'content' => $request->input('content'),
             'image_path' => $request->image_path,
             'published_at' => $request->published_at,
+            'category_id' => $request->category_id,
         ]);
 
         if ($request->has('tags')) {
@@ -57,12 +61,11 @@ class BlogPostController extends Controller
 
     public function edit(BlogPost $blog)
     {
-        // Parameter name matching is automatic if model binding is set. But in routes, we will register it as 'blogs' resource so the parameter name is 'blog'.
-        // Let's use $blog.
         $post = $blog;
         $tags = Tag::all();
+        $categories = Category::all();
 
-        return view('admin.blogs.edit', compact('post', 'tags'));
+        return view('admin.blogs.edit', compact('post', 'tags', 'categories'));
     }
 
     public function update(Request $request, BlogPost $blog)
@@ -74,6 +77,7 @@ class BlogPostController extends Controller
             'content' => 'required|string',
             'image_path' => 'required|string|max:255',
             'published_at' => 'required|date',
+            'category_id' => 'nullable|exists:categories,id',
             'tags' => 'nullable|array',
             'tags.*' => 'exists:tags,id',
         ]);
@@ -85,6 +89,7 @@ class BlogPostController extends Controller
             'content' => $request->input('content'),
             'image_path' => $request->image_path,
             'published_at' => $request->published_at,
+            'category_id' => $request->category_id,
         ]);
 
         $blog->tags()->sync($request->tags ?? []);
