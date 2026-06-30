@@ -43,7 +43,7 @@ class BlogPostController extends Controller
             'title' => $request->title,
             'slug' => $slug,
             'summary' => $request->summary,
-            'content' => $request->content,
+            'content' => $request->input('content'),
             'image_path' => $request->image_path,
             'published_at' => $request->published_at,
         ]);
@@ -82,7 +82,7 @@ class BlogPostController extends Controller
             'title' => $request->title,
             'slug' => Str::slug($request->slug),
             'summary' => $request->summary,
-            'content' => $request->content,
+            'content' => $request->input('content'),
             'image_path' => $request->image_path,
             'published_at' => $request->published_at,
         ]);
