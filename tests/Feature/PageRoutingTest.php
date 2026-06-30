@@ -1,9 +1,8 @@
 <?php
 
-use App\Models\Appointment;
+use App\Models\BlogPost;
 use App\Models\Department;
 use App\Models\Doctor;
-use App\Models\BlogPost;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(RefreshDatabase::class);
@@ -37,7 +36,7 @@ test('appointments can be stored with validation', function () {
         'email' => 'johndoe@example.com',
         'Phone-Number-2' => '1234567890',
         'Schedule-2' => 'tomorrow afternoon',
-        'Message-2' => 'Hello, I would like to book a general checkup.'
+        'Message-2' => 'Hello, I would like to book a general checkup.',
     ];
 
     $response = $this->post(route('appointments.store'), $data);
@@ -51,7 +50,7 @@ test('appointments can be stored with validation', function () {
         'email' => 'johndoe@example.com',
         'phone' => '1234567890',
         'preferred_time' => 'tomorrow afternoon',
-        'message' => 'Hello, I would like to book a general checkup.'
+        'message' => 'Hello, I would like to book a general checkup.',
     ]);
 });
 
@@ -60,4 +59,45 @@ test('appointments store validation errors', function () {
 
     $response->assertSessionHasErrors(['name', 'email', 'Phone-Number-2', 'Schedule-2']);
     $this->assertDatabaseCount('appointments', 0);
+});
+
+test('admin guest access redirects to login', function () {
+    $this->get(route('admin.dashboard'))->assertRedirect(route('admin.login'));
+    $this->get(route('admin.departments.index'))->assertRedirect(route('admin.login'));
+});
+
+test('admin login screen returns 200', function () {
+    $this->get(route('admin.login'))->assertStatus(200);
+});
+
+test('admin can log in and view dashboard', function () {
+    $response = $this->post(route('admin.login.submit'), [
+        'email' => 'admin@mediabundle.com',
+        'password' => 'password',
+    ]);
+
+    $response->assertRedirect(route('admin.dashboard'));
+    $response->assertSessionHas('admin_user_id');
+
+    $response2 = $this->withSession(['admin_user_id' => 1])->get(route('admin.dashboard'));
+    $response2->assertStatus(200);
+});
+
+test('admin can manage staff CRUD', function () {
+    $response = $this->withSession(['admin_user_id' => 1])
+        ->post(route('admin.staff.store'), [
+            'name' => 'John Support',
+            'slug' => 'john-support',
+            'title' => 'Mr.',
+            'role' => 'IT Engineer',
+            'image_path' => 'url',
+            'bio' => 'IT support bio description',
+            'is_active' => true,
+        ]);
+
+    $response->assertRedirect(route('admin.staff.index'));
+    $this->assertDatabaseHas('staff', [
+        'name' => 'John Support',
+        'role' => 'IT Engineer',
+    ]);
 });

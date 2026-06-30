@@ -16,4 +16,9 @@ class BlogPost extends Model
     protected $casts = [
         'published_at' => 'datetime',
     ];
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }
