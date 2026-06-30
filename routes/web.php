@@ -22,6 +22,7 @@ Route::get('/department/{slug}', [PageController::class, 'department'])->name('d
 Route::get('/doctor/{slug}', [PageController::class, 'doctor'])->name('doctors.show');
 Route::get('/blogs', [PageController::class, 'blogIndex'])->name('blog.index');
 Route::get('/blogs/{slug}', [PageController::class, 'blog'])->name('blog.show');
+Route::get('/search', [PageController::class, 'search'])->name('search');
 
 Route::post('/appointments', [AppointmentController::class, 'store'])->name('appointments.store');
 

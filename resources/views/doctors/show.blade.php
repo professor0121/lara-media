@@ -46,7 +46,7 @@
                                 <div>04:00 PM - 10:00 PM (Sunday to Friday)</div>
                             </div>
                         </div>
-                        <a class="doctor-appoinment-button w-button" data-w-id="013277cb-c514-47a4-346f-656551be6501" href="#">Book an appointment</a>
+                        <a class="doctor-appoinment-button w-button" data-w-id="013277cb-c514-47a4-346f-656551be6501" href="#" data-doctor-id="{{ $doctor->id }}">Book an appointment</a>
                     </div>
                 </div>
                 

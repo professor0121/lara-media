@@ -17,6 +17,7 @@
             <thead>
                 <tr>
                     <th>Patient Name</th>
+                    <th>Doctor</th>
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Preferred Schedule</th>
@@ -28,6 +29,15 @@
                 @forelse($appointments as $app)
                 <tr>
                     <td><strong>{{ $app->name }}</strong></td>
+                    <td>
+                        @if($app->doctor)
+                            <span style="color: var(--primary); font-weight: 500;">
+                                {{ $app->doctor->title }} {{ $app->doctor->name }}
+                            </span>
+                        @else
+                            <span style="color: var(--text-muted); font-style: italic;">General Booking</span>
+                        @endif
+                    </td>
                     <td>{{ $app->email }}</td>
                     <td>{{ $app->phone }}</td>
                     <td>{{ $app->preferred_time }}</td>
@@ -43,7 +53,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 32px;">
+                    <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 32px;">
                         No booked appointments found.
                     </td>
                 </tr>

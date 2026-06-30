@@ -28,6 +28,7 @@ class StoreAppointmentRequest extends FormRequest
             'Phone-Number-2' => 'required|string|max:255',
             'Schedule-2' => 'required|string|max:255',
             'Message-2' => 'nullable|string|max:5000',
+            'doctor_id' => 'nullable|exists:doctors,id',
         ];
     }
 }

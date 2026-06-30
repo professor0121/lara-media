@@ -93,4 +93,34 @@ class PageController extends Controller
 
         return view('blogs.index', compact('posts', 'categories', 'tags', 'latestPosts'));
     }
+
+    public function search()
+    {
+        $query = request('query');
+
+        $departments = Department::where('is_active', true)
+            ->where(function ($q) use ($query) {
+                $q->where('name', 'like', "%{$query}%")
+                    ->orWhere('description', 'like', "%{$query}%");
+            })
+            ->get();
+
+        $doctors = Doctor::with('department')
+            ->where(function ($q) use ($query) {
+                $q->where('name', 'like', "%{$query}%")
+                    ->orWhere('specialty', 'like', "%{$query}%")
+                    ->orWhere('bio', 'like', "%{$query}%");
+            })
+            ->get();
+
+        $blogPosts = BlogPost::with('category')
+            ->where(function ($q) use ($query) {
+                $q->where('title', 'like', "%{$query}%")
+                    ->orWhere('summary', 'like', "%{$query}%")
+                    ->orWhere('content', 'like', "%{$query}%");
+            })
+            ->get();
+
+        return view('search', compact('query', 'departments', 'doctors', 'blogPosts'));
+    }
 }

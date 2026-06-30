@@ -17,6 +17,7 @@ class AppointmentController extends Controller
             'phone' => $validated['Phone-Number-2'],
             'preferred_time' => $validated['Schedule-2'],
             'message' => $validated['Message-2'] ?? null,
+            'doctor_id' => $validated['doctor_id'] ?? null,
         ]);
 
         if ($request->wantsJson()) {

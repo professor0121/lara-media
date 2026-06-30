@@ -17,6 +17,16 @@
         <span style="font-size: 18px; font-weight: 700;">{{ $appointment->name }}</span>
     </div>
     <div style="display: grid; grid-template-columns: 150px 1fr; gap: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px;">
+        <span style="font-weight: 600; color: var(--text-muted);">Booked Doctor:</span>
+        <span>
+            @if($appointment->doctor)
+                <strong style="color: var(--primary);">{{ $appointment->doctor->title }} {{ $appointment->doctor->name }}</strong> ({{ $appointment->doctor->specialty }})
+            @else
+                <span style="color: var(--text-muted); font-style: italic;">General Booking</span>
+            @endif
+        </span>
+    </div>
+    <div style="display: grid; grid-template-columns: 150px 1fr; gap: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px;">
         <span style="font-weight: 600; color: var(--text-muted);">Email Address:</span>
         <span><a href="mailto:{{ $appointment->email }}" style="color: var(--primary); text-decoration: none;">{{ $appointment->email }}</a></span>
     </div>

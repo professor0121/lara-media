@@ -74,7 +74,7 @@
                         src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aa3304a3d9c423e77cb2e_TNC%20Medflow%20Logo.webp"
                         width="70" /></a>
                 <div class="search-container-wrapper">
-                    <form action="/search" class="site-search w-form"><input class="search-input w-input" id="search"
+                    <form action="{{ route('search') }}" class="site-search w-form"><input class="search-input w-input" id="search"
                             maxlength="256" name="query" placeholder="Search" required="" type="search" /><input
                             class="search-button w-button" type="submit" value="" /></form><a
                         class="location-block w-inline-block" href="/contact-us#location"><img alt=""
@@ -379,7 +379,16 @@
                             id="Phone-Number-2" maxlength="256" name="Phone-Number-2" placeholder="(603) 555-0123 *"
                             required="" type="tel" /><input class="appoinment-field w-input" data-name="Schedule 2"
                             id="Schedule-2" maxlength="256" name="Schedule-2" placeholder="Schedule to receive call *"
-                            required="" type="email" /></div><textarea class="appoinment-field text-area w-input"
+                            required="" type="email" /></div>
+                    <div class="form-field-wrapper" style="margin-bottom: 15px;">
+                        <select name="doctor_id" id="doctor-select" class="appoinment-field w-select" style="width: 100%; border: 1px solid #e2e8f0; color: #0f3b5c; background: #fff; padding: 12px; border-radius: 4px;">
+                            <option value="">Select Doctor (Optional)</option>
+                            @foreach($sharedDoctors as $doc)
+                                <option value="{{ $doc->id }}">{{ $doc->title }} {{ $doc->name }} ({{ $doc->specialty }})</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <textarea class="appoinment-field text-area w-input"
                         data-name="Message 2" id="Message-2" maxlength="5000" name="Message-2" placeholder="Message"
                         required=""></textarea><input class="form-submit-button w-button" data-wait="Please wait..."
                         type="submit" value="Send Message " />
@@ -558,6 +567,31 @@
         <script crossorigin="anonymous"
             integrity="sha384-Jo5OAlL9/iELlSHa6ygztzWhU/hGov03pXAHiSInarvy16b+rFXk5B6V5I4TSfNS"
             src="{{ asset('js/webflow.b02b4b38.ceba3e922881384a.js') }}" type="text/javascript"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Listen for click on any appointment booking buttons that target a specific doctor
+                document.querySelectorAll('[data-doctor-id]').forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        var doctorId = this.getAttribute('data-doctor-id');
+                        var select = document.getElementById('doctor-select');
+                        if (select && doctorId) {
+                            select.value = doctorId;
+                        }
+                    });
+                });
+
+                // Reset doctor selection if they click the general "Book Appointment" button in the header
+                var generalBtn = document.querySelector('.naviagtion-button');
+                if (generalBtn) {
+                    generalBtn.addEventListener('click', function () {
+                        var select = document.getElementById('doctor-select');
+                        if (select) {
+                            select.value = '';
+                        }
+                    });
+                }
+            });
+        </script>
 </body>
 
 </html>

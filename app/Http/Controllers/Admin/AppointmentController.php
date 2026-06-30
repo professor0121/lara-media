@@ -9,13 +9,15 @@ class AppointmentController extends Controller
 {
     public function index()
     {
-        $appointments = Appointment::orderBy('created_at', 'desc')->get();
+        $appointments = Appointment::with('doctor')->orderBy('created_at', 'desc')->get();
 
         return view('admin.appointments.index', compact('appointments'));
     }
 
     public function show(Appointment $appointment)
     {
+        $appointment->load('doctor');
+
         return view('admin.appointments.show', compact('appointment'));
     }
 

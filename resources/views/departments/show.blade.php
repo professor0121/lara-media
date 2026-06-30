@@ -78,7 +78,7 @@
                                                 </div>
                                             </div>
                                             <div class="hover-overlay doctor-overlay" style="display:none;-webkit-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0">
-                                                <a class="book-appoinment-button w-button" data-w-id="65efd451-ae68-45d6-96ef-134cc4a64f8d" href="#">Book Appoinment</a>
+                                                <a class="book-appoinment-button w-button" data-w-id="65efd451-ae68-45d6-96ef-134cc4a64f8d" href="#" data-doctor-id="{{ $doc->id }}">Book Appoinment</a>
                                                 <a class="book-appoinment-button hover-state w-button" href="{{ route('doctors.show', $doc->slug) }}">See Doctor Profile</a>
                                             </div>
                                         </div>
