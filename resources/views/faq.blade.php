@@ -2,5 +2,102 @@
     @section('title', 'Frequently Asked Questions - TNC Medflow')
     @section('meta_description', 'Find answers to common questions about appointments, services, and policies.')
 
-    <div class="banner"><div class="container"><div class="middle-allign-wrapper"><h1 class="page-heading">Frequently Asked Questions</h1><div class="breadcrumb-block"><a class="breadcrumb" href="/home">Home</a><div>/</div><div>FAQ - 1</div></div></div></div></div><div class="faq-section"><div class="container justify-center"><h2 class="title limited-width" data-w-id="1ec20a4e-228d-ba43-6730-ae0f33ce5d08" style="opacity:0;-webkit-transform:translate3d(null, 20%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 20%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 20%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 20%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)">Find Answers to Your Queries about TNC Medflow and Our Exceptional Healthcare Services</h2><div class="w-layout-grid faq-grid"><div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d0b-3e8488a1"><div class="question-icon"></div><div class="faq-contents"><div class="dropdown-title">How can I schedule an appointment at TNC Medflow?</div><p>You can schedule an appointment by calling our dedicated appointment hotline at [Phone Number], or you can use our online appointment booking system available on our website.</p></div></div><div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d13-3e8488a1"><div class="question-icon"></div><div class="faq-contents"><div class="dropdown-title">What should I bring for my first visit to TNC Medflow?</div><p>Please bring your photo ID, insurance information, any relevant medical records, and a list of medications you are currently taking.</p></div></div><div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d1b-3e8488a1"><div class="question-icon"></div><div class="faq-contents"><div class="dropdown-title">Does TNC Medflow accept insurance?</div><p>Yes, TNC Medflow accepts a wide range of insurance plans. We recommend verifying your insurance coverage before your appointment to ensure a smooth experience.</p></div></div><div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d23-3e8488a1"><div class="question-icon"></div><div class="faq-contents"><div class="dropdown-title">What are TNC Medflow's visiting hours?</div><p>TNC Medflow has flexible visiting hours for most departments. However, visiting hours may vary depending on the specific unit. Please check with the respective department for more information.</p></div></div><div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d2b-3e8488a1"><div class="question-icon"></div><div class="faq-contents"><div class="dropdown-title">What if I have an emergency outside regular business hours?</div><p>TNC Medflow's Emergency Department is open 24/7 to handle medical emergencies. Call [Emergency Contact Number] or proceed directly to the hospital for immediate care.</p></div></div><div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d33-3e8488a1"><div class="question-icon"></div><div class="faq-contents"><div class="dropdown-title">How do I pay my hospital bills?</div><p>You can pay your hospital bills at our Billing Department, which is located on-site. We offer various payment options, including cash, credit/debit cards, and electronic bank transfers.</p></div></div><div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d3b-3e8488a1"><div class="question-icon"></div><div class="faq-contents"><div class="dropdown-title">Does TNC Medflow have on-site parking?</div><p>Yes, TNC Medflow provides ample on-site parking for patients and visitors, making your visit to our facility convenient.</p></div></div><div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d43-3e8488a1"><div class="question-icon"></div><div class="faq-contents"><div class="dropdown-title">Is there a cafeteria or dining facility at TNC Medflow?</div><p>Yes, TNC Medflow has a cafeteria where you can find a variety of freshly prepared meals and beverages.</p></div></div></div><div class="faq-banner"><div class="faq-content-wrapper"><img alt="" class="message-image" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650ac3fa3924d9fe4b37704d_messaging%201.svg" width="70"/><div class="faq-banner-contents"><div class="faq-banner-title">You have different Questions?</div><p class="low-opacity-paragraph">Have questions on various topics? Our team is here to provide answers. From healthcare inquiries to tech solutions, we're ready to assist you.</p></div></div><a class="faq-button w-button" href="/contact-us-pages/contact">Contact with us</a></div></div></div></div>
+    <div class="banner">
+        <div class="container">
+            <div class="middle-allign-wrapper">
+                <h1 class="page-heading">Frequently Asked Questions</h1>
+                <div class="breadcrumb-block"><a class="breadcrumb" href="/home">Home</a>
+                    <div>/</div>
+                    <div>FAQ - 1</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="faq-section">
+        <div class="container justify-center">
+            <h2 class="title limited-width" data-w-id="1ec20a4e-228d-ba43-6730-ae0f33ce5d08"
+                style="opacity:0;-webkit-transform:translate3d(null, 20%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 20%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 20%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 20%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)">
+                Find Answers to Your Queries about TNC Medflow and Our Exceptional Healthcare Services</h2>
+            <div class="w-layout-grid faq-grid">
+                <div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d0b-3e8488a1">
+                    <div class="question-icon"></div>
+                    <div class="faq-contents">
+                        <div class="dropdown-title">How can I schedule an appointment at TNC Medflow?</div>
+                        <p>You can schedule an appointment by calling our dedicated appointment hotline at [Phone
+                            Number], or you can use our online appointment booking system available on our website.</p>
+                    </div>
+                </div>
+                <div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d13-3e8488a1">
+                    <div class="question-icon"></div>
+                    <div class="faq-contents">
+                        <div class="dropdown-title">What should I bring for my first visit to TNC Medflow?</div>
+                        <p>Please bring your photo ID, insurance information, any relevant medical records, and a list
+                            of medications you are currently taking.</p>
+                    </div>
+                </div>
+                <div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d1b-3e8488a1">
+                    <div class="question-icon"></div>
+                    <div class="faq-contents">
+                        <div class="dropdown-title">Does TNC Medflow accept insurance?</div>
+                        <p>Yes, TNC Medflow accepts a wide range of insurance plans. We recommend verifying your
+                            insurance coverage before your appointment to ensure a smooth experience.</p>
+                    </div>
+                </div>
+                <div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d23-3e8488a1">
+                    <div class="question-icon"></div>
+                    <div class="faq-contents">
+                        <div class="dropdown-title">What are TNC Medflow's visiting hours?</div>
+                        <p>TNC Medflow has flexible visiting hours for most departments. However, visiting hours may
+                            vary depending on the specific unit. Please check with the respective department for more
+                            information.</p>
+                    </div>
+                </div>
+                <div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d2b-3e8488a1">
+                    <div class="question-icon"></div>
+                    <div class="faq-contents">
+                        <div class="dropdown-title">What if I have an emergency outside regular business hours?</div>
+                        <p>TNC Medflow's Emergency Department is open 24/7 to handle medical emergencies. Call
+                            [Emergency Contact Number] or proceed directly to the hospital for immediate care.</p>
+                    </div>
+                </div>
+                <div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d33-3e8488a1">
+                    <div class="question-icon"></div>
+                    <div class="faq-contents">
+                        <div class="dropdown-title">How do I pay my hospital bills?</div>
+                        <p>You can pay your hospital bills at our Billing Department, which is located on-site. We offer
+                            various payment options, including cash, credit/debit cards, and electronic bank transfers.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d3b-3e8488a1">
+                    <div class="question-icon"></div>
+                    <div class="faq-contents">
+                        <div class="dropdown-title">Does TNC Medflow have on-site parking?</div>
+                        <p>Yes, TNC Medflow provides ample on-site parking for patients and visitors, making your visit
+                            to our facility convenient.</p>
+                    </div>
+                </div>
+                <div class="faq-card" id="w-node-_1ec20a4e-228d-ba43-6730-ae0f33ce5d43-3e8488a1">
+                    <div class="question-icon"></div>
+                    <div class="faq-contents">
+                        <div class="dropdown-title">Is there a cafeteria or dining facility at TNC Medflow?</div>
+                        <p>Yes, TNC Medflow has a cafeteria where you can find a variety of freshly prepared meals and
+                            beverages.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-banner">
+                <div class="faq-content-wrapper"><img alt="" class="message-image" loading="lazy"
+                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650ac3fa3924d9fe4b37704d_messaging%201.svg"
+                        width="70" />
+                    <div class="faq-banner-contents">
+                        <div class="faq-banner-title">You have different Questions?</div>
+                        <p class="low-opacity-paragraph">Have questions on various topics? Our team is here to provide
+                            answers. From healthcare inquiries to tech solutions, we're ready to assist you.</p>
+                    </div>
+                </div><a class="faq-button w-button" href="/contact-us-pages/contact">Contact with us</a>
+            </div>
+        </div>
+    </div>
+    </div>
 </x-layout>

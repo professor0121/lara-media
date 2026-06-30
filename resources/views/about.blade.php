@@ -2,57 +2,448 @@
     @section('title', 'About TNC Medflow - Our Commitment')
     @section('meta_description', 'At TNC Medflow, we are committed to delivering exceptional healthcare.')
 
-    <div class="banner"><div class="container"><div class="middle-allign-wrapper"><h1 class="page-heading">About <span class="span-background">TNC Medflow</span>: Empowering Health, Inspiring Hope</h1><div class="breadcrumb-block"><a class="breadcrumb" href="/home">Home</a><div>/</div><div>About Us</div></div></div></div></div><div class="about-hospital"><div class="section-paddding"><div class="container slide-from-bottom"><div class="horizontal-wrapper no-padding"><div class="image-wrapper about"><img alt="" class="about-image" loading="lazy" sizes="(max-width: 479px) 100vw, 70px" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f69_Rectangle%2072.webp" srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f69_Rectangle%252072-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f69_Rectangle%252072-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f69_Rectangle%2072.webp 1025w" width="70"/><div class="image-card"><div>Since</div><div class="year-number">2013</div></div></div><div class="veritcal-wrapper extra-padding"><h2 class="section-heading">About <span class="span-background">TNC Medflow</span></h2><p>At TNC Medflow, we are committed to your health and well-being. With a legacy of excellence spanning decades, we have earned our reputation as a trusted healthcare provider. Our dedicated team of professionals approach make us a preferred choice for your healthcare needs.<br/><br/>We believe in delivering compassionate care that extends beyond treatment, focusing on your overall wellness. Whether you're visiting for a routine check-up or require specialized medical attention, our mission is to ensure you receive the highest standard of healthcare.</p></div></div></div><div class="filter-blur-background bottom-right"></div></div></div><div class="commitment"><div class="container"><div class="w-layout-grid two-column-flex"><div class="veritcal-wrapper middle-allign"><h2 class="section-heading white">Our <span class="span-background">Commitment</span></h2><p class="low-opacity-paragraph">At TNC Medflow, we have made an unwavering commitment to provide exceptional healthcare services to our community. Our dedication to your health and well-being is at the core of everything we do.</p><img alt="" class="signature" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f7d_Graphic_Elements.svg" width="70"/></div><img alt="" class="commitment-image" data-w-id="bc6591ac-0aa4-d1b0-0e68-c0e3b3f4053b" id="w-node-bc6591ac-0aa4-d1b0-0e68-c0e3b3f4053b-6a67fcf4" loading="lazy" sizes="(max-width: 479px) 100vw, 70px" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fab_Rectangle%2074.webp" srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fab_Rectangle%252074-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fab_Rectangle%252074-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fab_Rectangle%2074.webp 1110w" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" width="70"/></div></div></div><div class="team"><div class="section-paddding"><div class="vertical-middle-allign-wrapper limited-width"><h2 class="section-heading"><span class="span-background">Meet</span> Our Team</h2><p>Our team at TNC Medflowis composed of dedicated healthcare professionals who are passionate about your well-being.</p></div><div class="team-auto-slider" data-w-id="aeb5a78f-5eb5-fa34-5cfb-d94511971637"><div class="w-layout-grid team-grid">
-        @foreach($doctors as $doctor)
-        <div class="team-card">
-            <div class="mask">
-                <img alt="{{ $doctor->name }}" class="team-doctor-image" loading="lazy" src="{{ $doctor->image_path }}" width="70"/>
-            </div>
-            <div class="team-body">
-                <div class="team-member-name">
-                    <a href="{{ route('doctors.show', $doctor->slug) }}" style="color: inherit; text-decoration: none;">
-                        {{ $doctor->title }} {{ $doctor->name }}
-                    </a>
+    <div class="banner">
+        <div class="container">
+            <div class="middle-allign-wrapper">
+                <h1 class="page-heading">About <span class="span-background">TNC Medflow</span>: Empowering Health,
+                    Inspiring Hope</h1>
+                <div class="breadcrumb-block"><a class="breadcrumb" href="/home">Home</a>
+                    <div>/</div>
+                    <div>About Us</div>
                 </div>
-                <div>{{ $doctor->specialty }}</div>
             </div>
         </div>
-        @endforeach
-        </div><div class="w-layout-grid team-grid hide-on-portrait">
-        @foreach($doctors as $doctor)
-        <div class="team-card">
-            <div class="mask">
-                <img alt="{{ $doctor->name }}" class="team-doctor-image" loading="lazy" src="{{ $doctor->image_path }}" width="70"/>
-            </div>
-            <div class="team-body">
-                <div class="team-member-name">
-                    <a href="{{ route('doctors.show', $doctor->slug) }}" style="color: inherit; text-decoration: none;">
-                        {{ $doctor->title }} {{ $doctor->name }}
-                    </a>
+    </div>
+    <div class="about-hospital">
+        <div class="section-paddding">
+            <div class="container slide-from-bottom">
+                <div class="horizontal-wrapper no-padding">
+                    <div class="image-wrapper about"><img alt="" class="about-image" loading="lazy"
+                            sizes="(max-width: 479px) 100vw, 70px"
+                            src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f69_Rectangle%2072.webp"
+                            srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f69_Rectangle%252072-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f69_Rectangle%252072-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f69_Rectangle%2072.webp 1025w"
+                            width="70" />
+                        <div class="image-card">
+                            <div>Since</div>
+                            <div class="year-number">2013</div>
+                        </div>
+                    </div>
+                    <div class="veritcal-wrapper extra-padding">
+                        <h2 class="section-heading">About <span class="span-background">TNC Medflow</span></h2>
+                        <p>At TNC Medflow, we are committed to your health and well-being. With a legacy of excellence
+                            spanning decades, we have earned our reputation as a trusted healthcare provider. Our
+                            dedicated team of professionals approach make us a preferred choice for your healthcare
+                            needs.<br /><br />We believe in delivering compassionate care that extends beyond treatment,
+                            focusing on your overall wellness. Whether you're visiting for a routine check-up or require
+                            specialized medical attention, our mission is to ensure you receive the highest standard of
+                            healthcare.</p>
+                    </div>
                 </div>
-                <div>{{ $doctor->specialty }}</div>
+            </div>
+            <div class="filter-blur-background bottom-right"></div>
+        </div>
+    </div>
+    <div class="commitment">
+        <div class="container">
+            <div class="w-layout-grid two-column-flex">
+                <div class="veritcal-wrapper middle-allign">
+                    <h2 class="section-heading white">Our <span class="span-background">Commitment</span></h2>
+                    <p class="low-opacity-paragraph">At TNC Medflow, we have made an unwavering commitment to provide
+                        exceptional healthcare services to our community. Our dedication to your health and well-being
+                        is at the core of everything we do.</p><img alt="" class="signature" loading="lazy"
+                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f7d_Graphic_Elements.svg"
+                        width="70" />
+                </div><img alt="" class="commitment-image" data-w-id="bc6591ac-0aa4-d1b0-0e68-c0e3b3f4053b"
+                    id="w-node-bc6591ac-0aa4-d1b0-0e68-c0e3b3f4053b-6a67fcf4" loading="lazy"
+                    sizes="(max-width: 479px) 100vw, 70px"
+                    src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fab_Rectangle%2074.webp"
+                    srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fab_Rectangle%252074-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fab_Rectangle%252074-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fab_Rectangle%2074.webp 1110w"
+                    style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                    width="70" />
             </div>
         </div>
-        @endforeach
-        </div></div>
-    
-    <div class="section-title-wrapper" style="text-align: center; margin-top: 80px; margin-bottom: 40px;">
-        <h2 class="section-heading">Our Clinical &amp; Support <span class="span-background">Staff</span></h2>
-        <p>Meet our support staff, coordinators, and lab technicians committed to your care.</p>
     </div>
-    <div class="w-layout-grid team-grid" style="margin-bottom: 60px;">
-        @foreach(\App\Models\Staff::where('is_active', true)->get() as $member)
-        <div class="team-card">
-            <div class="mask">
-                <img alt="{{ $member->name }}" class="team-doctor-image" loading="lazy" src="{{ $member->image_path }}" width="70"/>
+    <div class="team">
+        <div class="section-paddding">
+            <div class="vertical-middle-allign-wrapper limited-width">
+                <h2 class="section-heading"><span class="span-background">Meet</span> Our Team</h2>
+                <p>Our team at TNC Medflowis composed of dedicated healthcare professionals who are passionate about
+                    your well-being.</p>
             </div>
-            <div class="team-body">
-                <div class="team-member-name" style="margin-bottom: 4px;">{{ $member->title }} {{ $member->name }}</div>
-                <div style="font-weight: 600; color: var(--primary); font-size: 14px; margin-bottom: 8px;">{{ $member->role }}</div>
-                <p style="color: #64748b; font-size: 13px; line-height: 1.5;">{{ $member->bio }}</p>
+            <div class="team-auto-slider" data-w-id="aeb5a78f-5eb5-fa34-5cfb-d94511971637">
+                <div class="w-layout-grid team-grid">
+                    @foreach($doctors as $doctor)
+                        <div class="team-card">
+                            <div class="mask">
+                                <img alt="{{ $doctor->name }}" class="team-doctor-image" loading="lazy"
+                                    src="{{ $doctor->image_path }}" width="70" />
+                            </div>
+                            <div class="team-body">
+                                <div class="team-member-name">
+                                    <a href="{{ route('doctors.show', $doctor->slug) }}"
+                                        style="color: inherit; text-decoration: none;">
+                                        {{ $doctor->title }} {{ $doctor->name }}
+                                    </a>
+                                </div>
+                                <div>{{ $doctor->specialty }}</div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="w-layout-grid team-grid hide-on-portrait">
+                    @foreach($doctors as $doctor)
+                        <div class="team-card">
+                            <div class="mask">
+                                <img alt="{{ $doctor->name }}" class="team-doctor-image" loading="lazy"
+                                    src="{{ $doctor->image_path }}" width="70" />
+                            </div>
+                            <div class="team-body">
+                                <div class="team-member-name">
+                                    <a href="{{ route('doctors.show', $doctor->slug) }}"
+                                        style="color: inherit; text-decoration: none;">
+                                        {{ $doctor->title }} {{ $doctor->name }}
+                                    </a>
+                                </div>
+                                <div>{{ $doctor->specialty }}</div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <div class="section-title-wrapper" style="text-align: center; margin-top: 80px; margin-bottom: 40px;">
+                <h2 class="section-heading">Our Clinical &amp; Support <span class="span-background">Staff</span></h2>
+                <p>Meet our support staff, coordinators, and lab technicians committed to your care.</p>
+            </div>
+            <div class="w-layout-grid team-grid" style="margin-bottom: 60px;">
+                @foreach(\App\Models\Staff::where('is_active', true)->get() as $member)
+                    <div class="team-card">
+                        <div class="mask">
+                            <img alt="{{ $member->name }}" class="team-doctor-image" loading="lazy"
+                                src="{{ $member->image_path }}" width="70" />
+                        </div>
+                        <div class="team-body">
+                            <div class="team-member-name" style="margin-bottom: 4px;">{{ $member->title }}
+                                {{ $member->name }}
+                            </div>
+                            <div style="font-weight: 600; color: var(--primary); font-size: 14px; margin-bottom: 8px;">
+                                {{ $member->role }}
+                            </div>
+                            <p style="color: #64748b; font-size: 13px; line-height: 1.5;">{{ $member->bio }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="filter-blur-background top-left"></div>
+        </div>
+    </div>
+    <div class="facilities">
+        <div class="section-paddding no-top-padding">
+            <div class="container">
+                <div class="horizontal-wrapper extra-gap">
+                    <div id="w-node-_63231908-c6dd-dcb0-7cf7-8bec5cd5b4f9-6a67fcf4"><img alt="" class="facilities-image"
+                            data-w-id="63231908-c6dd-dcb0-7cf7-8bec5cd5b4fa" loading="lazy"
+                            sizes="(max-width: 479px) 100vw, 70px"
+                            src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f96_image.webp"
+                            srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f96_image-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f96_image-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f96_image-p-1080.png 1080w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f96_image.webp 1202w"
+                            style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                            width="70" /></div>
+                    <div class="facilities-contents" id="w-node-_63231908-c6dd-dcb0-7cf7-8bec5cd5b4fb-6a67fcf4">
+                        <h2 class="section-heading"><span class="span-background">Facilities</span> &amp; Technology
+                        </h2>
+                        <p>At TNC Medflow, we take pride in providing a welcoming and comfortable environment for our
+                            patients.</p>
+                        <div class="list-wrapper">
+                            <ol class="facilities-list" role="list">
+                                <li>
+                                    <div>Modern Patient Rooms</div>
+                                </li>
+                                <li>
+                                    <div>Advanced Operating Theaters</div>
+                                </li>
+                                <li>
+                                    <div>Intensive Care Units (ICU)</div>
+                                </li>
+                                <li>
+                                    <div>Diagnostic Imaging</div>
+                                </li>
+                                <li>
+                                    <div>Laboratory Services</div>
+                                </li>
+                                <li>
+                                    <div>Pharmacy</div>
+                                </li>
+                                <li>
+                                    <div>Rehabilitation Centers</div>
+                                </li>
+                                <li>
+                                    <div>Patient-Focused Amenities</div>
+                                </li>
+                                <li>
+                                    <div>Emergency Department</div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="filter-blur-background bottom-right"></div>
+                </div>
             </div>
         </div>
-        @endforeach
     </div>
-    <div class="filter-blur-background top-left"></div></div></div><div class="facilities"><div class="section-paddding no-top-padding"><div class="container"><div class="horizontal-wrapper extra-gap"><div id="w-node-_63231908-c6dd-dcb0-7cf7-8bec5cd5b4f9-6a67fcf4"><img alt="" class="facilities-image" data-w-id="63231908-c6dd-dcb0-7cf7-8bec5cd5b4fa" loading="lazy" sizes="(max-width: 479px) 100vw, 70px" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f96_image.webp" srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f96_image-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f96_image-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f96_image-p-1080.png 1080w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f96_image.webp 1202w" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" width="70"/></div><div class="facilities-contents" id="w-node-_63231908-c6dd-dcb0-7cf7-8bec5cd5b4fb-6a67fcf4"><h2 class="section-heading"><span class="span-background">Facilities</span> &amp; Technology</h2><p>At TNC Medflow, we take pride in providing a welcoming and comfortable environment for our patients.</p><div class="list-wrapper"><ol class="facilities-list" role="list"><li><div>Modern Patient Rooms</div></li><li><div>Advanced Operating Theaters</div></li><li><div>Intensive Care Units (ICU)</div></li><li><div>Diagnostic Imaging</div></li><li><div>Laboratory Services</div></li><li><div>Pharmacy</div></li><li><div>Rehabilitation Centers</div></li><li><div>Patient-Focused Amenities</div></li><li><div>Emergency Department</div></li></ol></div></div><div class="filter-blur-background bottom-right"></div></div></div></div></div><div class="awards-section"><div class="award-image-wrapper"><img alt="" class="award-image" data-w-id="e35cd280-8f5f-117e-c589-47be8df67bfc" loading="lazy" sizes="(max-width: 479px) 100vw, 70px" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f9e_Rectangle%2092.webp" srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f9e_Rectangle%252092-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f9e_Rectangle%252092-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f9e_Rectangle%252092-p-1080.png 1080w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f9e_Rectangle%252092-p-1600.png 1600w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f9e_Rectangle%2092.webp 1756w" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" width="70"/></div><div class="container"><div class="awards-contents" id="w-node-e35cd280-8f5f-117e-c589-47be8df67bfe-6a67fcf4"><div class="award-texts"><div class="section-title">Recognitions and Awards</div><h2 class="section-heading white"><span class="span-background">Celebrating</span> TNC Medflow's Excellence in Healthcare</h2></div><div class="awards-logo-container"><div class="awards-card"><img alt="" class="awards-background-image" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aa95bb39e4fa6b33d89dc__I%CC%82O%CC%81E%CC%80_1.webp" width="70"/><div class="award-title">Award<br/>Logo</div></div><div class="awards-card"><img alt="" class="awards-background-image" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aa95bb39e4fa6b33d89dc__I%CC%82O%CC%81E%CC%80_1.webp" width="70"/><div class="award-title">Award<br/>Logo</div></div><div class="awards-card" id="w-node-e35cd280-8f5f-117e-c589-47be8df67c13-6a67fcf4"><img alt="" class="awards-background-image" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aa95bb39e4fa6b33d89dc__I%CC%82O%CC%81E%CC%80_1.webp" width="70"/><div class="award-title">Award<br/>Logo</div></div><div class="awards-card" id="w-node-e35cd280-8f5f-117e-c589-47be8df67c19-6a67fcf4"><img alt="" class="awards-background-image" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aa95bb39e4fa6b33d89dc__I%CC%82O%CC%81E%CC%80_1.webp" width="70"/><div class="award-title">Award<br/>Logo</div></div></div></div></div></div><div class="testimonial-section"><div class="section-paddding"><div class="container middle-allign"><div class="vertical-middle-allign-wrapper limited-width"><h2 class="section-heading">Patient <span class="span-background">Testimonials</span></h2><p>At TNC Medflow, patients are our priority. We're committed to exceptional care and a positive experience.</p></div><div class="testimonial-slider w-slider" data-animation="slide" data-autoplay="true" data-autoplay-limit="0" data-delay="2000" data-disable-swipe="false" data-duration="500" data-easing="ease" data-hide-arrows="false" data-infinite="true" data-nav-spacing="3"><div class="testimonial-mask w-slider-mask"><div class="w-slide"><div class="testimonial-wrapper"><div class="testimonial-card"><p>TNC Medflow provided exceptional care during my surgery. The staff was friendly, and the doctors were highly skilled. Grateful for their professionalism.</p><div class="star-wrapper"><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div></div><img alt="" class="polygon" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa9_Polygon%201.webp" width="29"/><img alt="" class="quote-icon" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa7_quote-left%202.webp" width="40"/></div><div class="testimonial-author-block"><img alt="" class="testimonial-author" loading="lazy" sizes="(max-width: 479px) 100vw, 70px" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%2021.webp" srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-1080.png 1080w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%2021.webp 1592w" width="70"/><div><div class="testimonial-author-name">Cameron Williamson</div><div class="testimonial-author-designation">Neurology patient</div></div></div></div></div><div class="w-slide"><div class="testimonial-wrapper"><div class="testimonial-card"><p>I was impressed with TNC Medflow's commitment to patient comfort. They made my stay feel like home. Forever grateful.</p><div class="star-wrapper"><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div></div><img alt="" class="polygon" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa9_Polygon%201.webp" width="29"/><img alt="" class="quote-icon" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa7_quote-left%202.webp" width="40"/></div><div class="testimonial-author-block"><img alt="" class="testimonial-author" loading="lazy" sizes="(max-width: 479px) 100vw, 70px" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%2021%20(1).webp" srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%252021%2520(1)-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%252021%2520(1)-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%252021%2520(1)-p-1080.png 1080w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%2021%20(1).webp 1298w" width="70"/><div><div class="testimonial-author-name">Cameron Williamson</div><div class="testimonial-author-designation">Neurology patient</div></div></div></div></div><div class="w-slide"><div class="testimonial-wrapper"><div class="testimonial-card"><p>The Cardiology team at TNC Medflow saved my life. Thanks to their quick response and expertise, I'm on the road to recovery.</p><div class="star-wrapper"><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div></div><img alt="" class="polygon" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa9_Polygon%201.webp" width="29"/><img alt="" class="quote-icon" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa7_quote-left%202.webp" width="40"/></div><div class="testimonial-author-block"><img alt="" class="testimonial-author" loading="lazy" sizes="(max-width: 479px) 100vw, 70px" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f7e_Ellipse%2021%20(2).webp" srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f7e_Ellipse%252021%2520(2)-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f7e_Ellipse%252021%2520(2)-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f7e_Ellipse%2021%20(2).webp 1256w" width="70"/><div><div class="testimonial-author-name">Cameron Williamson</div><div class="testimonial-author-designation">Neurology patient</div></div></div></div></div><div class="w-slide"><div class="testimonial-wrapper"><div class="testimonial-card"><p>TNC Medflow provided exceptional care during my surgery. The staff was friendly, and the doctors were highly skilled. Grateful for their professionalism.</p><div class="star-wrapper"><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div></div><img alt="" class="polygon" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa9_Polygon%201.webp" width="29"/><img alt="" class="quote-icon" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa7_quote-left%202.webp" width="40"/></div><div class="testimonial-author-block"><img alt="" class="testimonial-author" loading="lazy" sizes="(max-width: 479px) 100vw, 70px" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%2021.webp" srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-1080.png 1080w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%2021.webp 1592w" width="70"/><div><div class="testimonial-author-name">Cameron Williamson</div><div class="testimonial-author-designation">Neurology patient</div></div></div></div></div><div class="w-slide"><div class="testimonial-wrapper"><div class="testimonial-card"><p>I was impressed with TNC Medflow's commitment to patient comfort. They made my stay feel like home. Forever grateful.</p><div class="star-wrapper"><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div></div><img alt="" class="polygon" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa9_Polygon%201.webp" width="29"/><img alt="" class="quote-icon" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa7_quote-left%202.webp" width="40"/></div><div class="testimonial-author-block"><img alt="" class="testimonial-author" loading="lazy" sizes="(max-width: 479px) 100vw, 70px" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%2021%20(1).webp" srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%252021%2520(1)-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%252021%2520(1)-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%252021%2520(1)-p-1080.png 1080w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%2021%20(1).webp 1298w" width="70"/><div><div class="testimonial-author-name">Cameron Williamson</div><div class="testimonial-author-designation">Neurology patient</div></div></div></div></div><div class="w-slide"><div class="testimonial-wrapper"><div class="testimonial-card"><p>TNC Medflow provided exceptional care during my surgery. The staff was friendly, and the doctors were highly skilled. Grateful for their professionalism.</p><div class="star-wrapper"><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div><div class="star-icon"></div></div><img alt="" class="polygon" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa9_Polygon%201.webp" width="29"/><img alt="" class="quote-icon" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa7_quote-left%202.webp" width="40"/></div><div class="testimonial-author-block"><img alt="" class="testimonial-author" loading="lazy" sizes="(max-width: 479px) 100vw, 70px" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%2021.webp" srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-1080.png 1080w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%2021.webp 1592w" width="70"/><div><div class="testimonial-author-name">Cameron Williamson</div><div class="testimonial-author-designation">Neurology patient</div></div></div></div></div></div><div class="hidden w-slider-arrow-left"><div class="w-icon-slider-left"></div></div><div class="hidden w-slider-arrow-right"><div class="w-icon-slider-right"></div></div><div class="testimonial-navigation w-slider-nav w-slider-nav-invert w-round"></div></div><div class="filter-blur-background top-left"></div></div><div class="filter-blur-background bottom-right"></div></div></div><div class="appoinment-section"><div class="container"><div class="appoinment-banner"><div class="section-title">Take Charge of Your Health Today</div><div class="horizontal-wrapper"><h2 class="section-heading white"><span class="span-background">Schedule</span> an Appointment at TNC Medflow</h2><a class="primary-button w-button" data-w-id="85c33f0f-c309-7b4b-b145-cd4857925ac9" href="#">Make an Appointment</a></div><img alt="" class="background-image-appoinment" loading="lazy" src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aa95bb39e4fa6b33d8a07_image.webp" width="70"/></div></div></div></div>
+    <div class="awards-section">
+        <div class="award-image-wrapper"><img alt="" class="award-image"
+                data-w-id="e35cd280-8f5f-117e-c589-47be8df67bfc" loading="lazy" sizes="(max-width: 479px) 100vw, 70px"
+                src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f9e_Rectangle%2092.webp"
+                srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f9e_Rectangle%252092-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f9e_Rectangle%252092-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f9e_Rectangle%252092-p-1080.png 1080w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f9e_Rectangle%252092-p-1600.png 1600w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f9e_Rectangle%2092.webp 1756w"
+                style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.3, 1.3, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                width="70" /></div>
+        <div class="container">
+            <div class="awards-contents" id="w-node-e35cd280-8f5f-117e-c589-47be8df67bfe-6a67fcf4">
+                <div class="award-texts">
+                    <div class="section-title">Recognitions and Awards</div>
+                    <h2 class="section-heading white"><span class="span-background">Celebrating</span> TNC Medflow's
+                        Excellence in Healthcare</h2>
+                </div>
+                <div class="awards-logo-container">
+                    <div class="awards-card"><img alt="" class="awards-background-image" loading="lazy"
+                            src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aa95bb39e4fa6b33d89dc__I%CC%82O%CC%81E%CC%80_1.webp"
+                            width="70" />
+                        <div class="award-title">Award<br />Logo</div>
+                    </div>
+                    <div class="awards-card"><img alt="" class="awards-background-image" loading="lazy"
+                            src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aa95bb39e4fa6b33d89dc__I%CC%82O%CC%81E%CC%80_1.webp"
+                            width="70" />
+                        <div class="award-title">Award<br />Logo</div>
+                    </div>
+                    <div class="awards-card" id="w-node-e35cd280-8f5f-117e-c589-47be8df67c13-6a67fcf4"><img alt=""
+                            class="awards-background-image" loading="lazy"
+                            src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aa95bb39e4fa6b33d89dc__I%CC%82O%CC%81E%CC%80_1.webp"
+                            width="70" />
+                        <div class="award-title">Award<br />Logo</div>
+                    </div>
+                    <div class="awards-card" id="w-node-e35cd280-8f5f-117e-c589-47be8df67c19-6a67fcf4"><img alt=""
+                            class="awards-background-image" loading="lazy"
+                            src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aa95bb39e4fa6b33d89dc__I%CC%82O%CC%81E%CC%80_1.webp"
+                            width="70" />
+                        <div class="award-title">Award<br />Logo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="testimonial-section">
+        <div class="section-paddding">
+            <div class="container middle-allign">
+                <div class="vertical-middle-allign-wrapper limited-width">
+                    <h2 class="section-heading">Patient <span class="span-background">Testimonials</span></h2>
+                    <p>At TNC Medflow, patients are our priority. We're committed to exceptional care and a positive
+                        experience.</p>
+                </div>
+                <div class="testimonial-slider w-slider" data-animation="slide" data-autoplay="true"
+                    data-autoplay-limit="0" data-delay="2000" data-disable-swipe="false" data-duration="500"
+                    data-easing="ease" data-hide-arrows="false" data-infinite="true" data-nav-spacing="3">
+                    <div class="testimonial-mask w-slider-mask">
+                        <div class="w-slide">
+                            <div class="testimonial-wrapper">
+                                <div class="testimonial-card">
+                                    <p>TNC Medflow provided exceptional care during my surgery. The staff was friendly,
+                                        and the doctors were highly skilled. Grateful for their professionalism.</p>
+                                    <div class="star-wrapper">
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                    </div><img alt="" class="polygon" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa9_Polygon%201.webp"
+                                        width="29" /><img alt="" class="quote-icon" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa7_quote-left%202.webp"
+                                        width="40" />
+                                </div>
+                                <div class="testimonial-author-block"><img alt="" class="testimonial-author"
+                                        loading="lazy" sizes="(max-width: 479px) 100vw, 70px"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%2021.webp"
+                                        srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-1080.png 1080w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%2021.webp 1592w"
+                                        width="70" />
+                                    <div>
+                                        <div class="testimonial-author-name">Cameron Williamson</div>
+                                        <div class="testimonial-author-designation">Neurology patient</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-slide">
+                            <div class="testimonial-wrapper">
+                                <div class="testimonial-card">
+                                    <p>I was impressed with TNC Medflow's commitment to patient comfort. They made my
+                                        stay feel like home. Forever grateful.</p>
+                                    <div class="star-wrapper">
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                    </div><img alt="" class="polygon" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa9_Polygon%201.webp"
+                                        width="29" /><img alt="" class="quote-icon" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa7_quote-left%202.webp"
+                                        width="40" />
+                                </div>
+                                <div class="testimonial-author-block"><img alt="" class="testimonial-author"
+                                        loading="lazy" sizes="(max-width: 479px) 100vw, 70px"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%2021%20(1).webp"
+                                        srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%252021%2520(1)-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%252021%2520(1)-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%252021%2520(1)-p-1080.png 1080w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%2021%20(1).webp 1298w"
+                                        width="70" />
+                                    <div>
+                                        <div class="testimonial-author-name">Cameron Williamson</div>
+                                        <div class="testimonial-author-designation">Neurology patient</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-slide">
+                            <div class="testimonial-wrapper">
+                                <div class="testimonial-card">
+                                    <p>The Cardiology team at TNC Medflow saved my life. Thanks to their quick response
+                                        and expertise, I'm on the road to recovery.</p>
+                                    <div class="star-wrapper">
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                    </div><img alt="" class="polygon" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa9_Polygon%201.webp"
+                                        width="29" /><img alt="" class="quote-icon" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa7_quote-left%202.webp"
+                                        width="40" />
+                                </div>
+                                <div class="testimonial-author-block"><img alt="" class="testimonial-author"
+                                        loading="lazy" sizes="(max-width: 479px) 100vw, 70px"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f7e_Ellipse%2021%20(2).webp"
+                                        srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f7e_Ellipse%252021%2520(2)-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f7e_Ellipse%252021%2520(2)-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f7e_Ellipse%2021%20(2).webp 1256w"
+                                        width="70" />
+                                    <div>
+                                        <div class="testimonial-author-name">Cameron Williamson</div>
+                                        <div class="testimonial-author-designation">Neurology patient</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-slide">
+                            <div class="testimonial-wrapper">
+                                <div class="testimonial-card">
+                                    <p>TNC Medflow provided exceptional care during my surgery. The staff was friendly,
+                                        and the doctors were highly skilled. Grateful for their professionalism.</p>
+                                    <div class="star-wrapper">
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                    </div><img alt="" class="polygon" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa9_Polygon%201.webp"
+                                        width="29" /><img alt="" class="quote-icon" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa7_quote-left%202.webp"
+                                        width="40" />
+                                </div>
+                                <div class="testimonial-author-block"><img alt="" class="testimonial-author"
+                                        loading="lazy" sizes="(max-width: 479px) 100vw, 70px"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%2021.webp"
+                                        srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-1080.png 1080w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%2021.webp 1592w"
+                                        width="70" />
+                                    <div>
+                                        <div class="testimonial-author-name">Cameron Williamson</div>
+                                        <div class="testimonial-author-designation">Neurology patient</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-slide">
+                            <div class="testimonial-wrapper">
+                                <div class="testimonial-card">
+                                    <p>I was impressed with TNC Medflow's commitment to patient comfort. They made my
+                                        stay feel like home. Forever grateful.</p>
+                                    <div class="star-wrapper">
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                    </div><img alt="" class="polygon" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa9_Polygon%201.webp"
+                                        width="29" /><img alt="" class="quote-icon" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa7_quote-left%202.webp"
+                                        width="40" />
+                                </div>
+                                <div class="testimonial-author-block"><img alt="" class="testimonial-author"
+                                        loading="lazy" sizes="(max-width: 479px) 100vw, 70px"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%2021%20(1).webp"
+                                        srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%252021%2520(1)-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%252021%2520(1)-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%252021%2520(1)-p-1080.png 1080w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f86_Ellipse%2021%20(1).webp 1298w"
+                                        width="70" />
+                                    <div>
+                                        <div class="testimonial-author-name">Cameron Williamson</div>
+                                        <div class="testimonial-author-designation">Neurology patient</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-slide">
+                            <div class="testimonial-wrapper">
+                                <div class="testimonial-card">
+                                    <p>TNC Medflow provided exceptional care during my surgery. The staff was friendly,
+                                        and the doctors were highly skilled. Grateful for their professionalism.</p>
+                                    <div class="star-wrapper">
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                        <div class="star-icon"></div>
+                                    </div><img alt="" class="polygon" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa9_Polygon%201.webp"
+                                        width="29" /><img alt="" class="quote-icon" loading="lazy"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6fa7_quote-left%202.webp"
+                                        width="40" />
+                                </div>
+                                <div class="testimonial-author-block"><img alt="" class="testimonial-author"
+                                        loading="lazy" sizes="(max-width: 479px) 100vw, 70px"
+                                        src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%2021.webp"
+                                        srcset="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-500.png 500w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-800.png 800w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%252021-p-1080.png 1080w, https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aaac7130beb68ae6c6f8b_Ellipse%2021.webp 1592w"
+                                        width="70" />
+                                    <div>
+                                        <div class="testimonial-author-name">Cameron Williamson</div>
+                                        <div class="testimonial-author-designation">Neurology patient</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden w-slider-arrow-left">
+                        <div class="w-icon-slider-left"></div>
+                    </div>
+                    <div class="hidden w-slider-arrow-right">
+                        <div class="w-icon-slider-right"></div>
+                    </div>
+                    <div class="testimonial-navigation w-slider-nav w-slider-nav-invert w-round"></div>
+                </div>
+                <div class="filter-blur-background top-left"></div>
+            </div>
+            <div class="filter-blur-background bottom-right"></div>
+        </div>
+    </div>
+    <div class="appoinment-section">
+        <div class="container">
+            <div class="appoinment-banner">
+                <div class="section-title">Take Charge of Your Health Today</div>
+                <div class="horizontal-wrapper">
+                    <h2 class="section-heading white"><span class="span-background">Schedule</span> an Appointment at
+                        TNC Medflow</h2><a class="primary-button w-button"
+                        data-w-id="85c33f0f-c309-7b4b-b145-cd4857925ac9" href="#">Make an Appointment</a>
+                </div><img alt="" class="background-image-appoinment" loading="lazy"
+                    src="https://cdn.prod.website-files.com/650a93508d45b1a9c66e5000/650aa95bb39e4fa6b33d8a07_image.webp"
+                    width="70" />
+            </div>
+        </div>
+    </div>
+    </div>
 </x-layout>

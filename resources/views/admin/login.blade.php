@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,12 +19,14 @@
             --border-color: #334155;
             --danger: #ef4444;
         }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: 'Outfit', sans-serif;
         }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
@@ -31,14 +34,16 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background-image: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%), 
-                              radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 40%);
+            background-image: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 40%);
         }
+
         .login-container {
             width: 100%;
             max-width: 420px;
             padding: 20px;
         }
+
         .login-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -46,6 +51,7 @@
             padding: 40px;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
         }
+
         .brand {
             font-size: 24px;
             font-weight: 700;
@@ -53,6 +59,7 @@
             text-align: center;
             margin-bottom: 8px;
         }
+
         .title {
             text-align: center;
             font-size: 16px;
@@ -60,17 +67,20 @@
             margin-bottom: 32px;
             font-weight: 500;
         }
+
         .form-group {
             display: flex;
             flex-direction: column;
             gap: 8px;
             margin-bottom: 24px;
         }
+
         label {
             font-weight: 600;
             font-size: 14px;
             color: var(--text-muted);
         }
+
         input {
             padding: 12px 16px;
             background-color: var(--bg-color);
@@ -80,10 +90,12 @@
             font-size: 15px;
             transition: border-color 0.2s ease;
         }
+
         input:focus {
             outline: none;
             border-color: var(--primary);
         }
+
         .btn-submit {
             width: 100%;
             padding: 12px;
@@ -97,9 +109,11 @@
             transition: all 0.2s ease;
             margin-top: 8px;
         }
+
         .btn-submit:hover {
             background-color: var(--primary-hover);
         }
+
         .alert {
             padding: 12px;
             border-radius: 6px;
@@ -112,6 +126,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="login-container">
         <div class="login-card">
@@ -133,7 +148,8 @@
                 @csrf
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="admin@mediabundle.com" required autofocus>
+                    <input type="email" id="email" name="email" value="{{ old('email') }}"
+                        placeholder="admin@mediabundle.com" required autofocus>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
@@ -144,4 +160,5 @@
         </div>
     </div>
 </body>
+
 </html>
