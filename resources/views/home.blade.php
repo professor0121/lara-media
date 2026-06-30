@@ -15,7 +15,7 @@
                   id="w-node-d7292363-ea6f-7976-502d-df8411bb6c53-c66e5003" style="opacity:0">
                   <h1 class="hero-title"><span class="span-background">Welcome</span> to<br />TNC Medflow</h1>
                   <p class="hero-sub-title">Where Compassionate Care Meets Excellence</p><a
-                    class="secondary-button w-button" href="/department-pages/doctor-page-style-3">Find A Doctor</a>
+                    class="secondary-button w-button" href="{{ route('about') }}">Find A Doctor</a>
                 </div>
                 <div class="hero-image-wrapper" id="w-node-d7292363-ea6f-7976-502d-df8411bb6c5e-c66e5003"><img alt=""
                     class="hero-image" data-w-id="d7292363-ea6f-7976-502d-df8411bb6c5f" loading="lazy"
@@ -34,7 +34,7 @@
                 <div class="hero-contents" id="w-node-d7292363-ea6f-7976-502d-df8411bb6c64-c66e5003">
                   <h1 class="hero-title"><span class="span-background">Welcome</span> to<br />TNC Medflow</h1>
                   <p class="hero-sub-title">Where Compassionate Care Meets Excellence</p><a
-                    class="secondary-button w-button" href="#">Find A Doctor</a>
+                    class="secondary-button w-button" href="{{ route('about') }}">Find A Doctor</a>
                 </div>
                 <div class="hero-image-wrapper" id="w-node-d7292363-ea6f-7976-502d-df8411bb6c6f-c66e5003"><img alt=""
                     class="hero-image" loading="lazy" sizes="(max-width: 479px) 100vw, 70px"
@@ -52,7 +52,7 @@
                 <div class="hero-contents" id="w-node-d7292363-ea6f-7976-502d-df8411bb6c75-c66e5003">
                   <h1 class="hero-title"><span class="span-background">Welcome</span> to<br />TNC Medflow</h1>
                   <p class="hero-sub-title">Where Compassionate Care Meets Excellence</p><a
-                    class="secondary-button w-button" href="#">Find A Doctor</a>
+                    class="secondary-button w-button" href="{{ route('about') }}">Find A Doctor</a>
                 </div>
                 <div class="hero-image-wrapper" id="w-node-d7292363-ea6f-7976-502d-df8411bb6c80-c66e5003"><img alt=""
                     class="hero-image" loading="lazy" sizes="(max-width: 479px) 100vw, 70px"
@@ -70,7 +70,7 @@
                 <div class="hero-contents" id="w-node-d7292363-ea6f-7976-502d-df8411bb6c86-c66e5003">
                   <h1 class="hero-title"><span class="span-background">Welcome</span> to<br />TNC Medflow</h1>
                   <p class="hero-sub-title">Where Compassionate Care Meets Excellence</p><a
-                    class="secondary-button w-button" href="#">Find A Doctor</a>
+                    class="secondary-button w-button" href="{{ route('about') }}">Find A Doctor</a>
                 </div>
                 <div class="hero-image-wrapper" id="w-node-d7292363-ea6f-7976-502d-df8411bb6c91-c66e5003"><img alt=""
                     class="hero-image" loading="lazy" sizes="(max-width: 479px) 100vw, 70px"
@@ -88,7 +88,7 @@
                 <div class="hero-contents" id="w-node-d7292363-ea6f-7976-502d-df8411bb6c97-c66e5003">
                   <h1 class="hero-title"><span class="span-background">Welcome</span> to<br />TNC Medflow</h1>
                   <p class="hero-sub-title">Where Compassionate Care Meets Excellence</p><a
-                    class="secondary-button w-button" href="#">Find A Doctor</a>
+                    class="secondary-button w-button" href="{{ route('about') }}">Find A Doctor</a>
                 </div>
                 <div class="hero-image-wrapper" id="w-node-d7292363-ea6f-7976-502d-df8411bb6ca2-c66e5003"><img alt=""
                     class="hero-image" loading="lazy" sizes="(max-width: 479px) 100vw, 70px"

@@ -168,34 +168,15 @@
                                 <nav class="menu-dropdown-list w-dropdown-list">
                                     <div class="dropdown-list-wrapper">
                                         <div class="left-submenu">
-                                            <div class="submenu-wrapper no-right-border"><a
-                                                    class="sub-menu-item w-inline-block"
-                                                    href="/department-pages/doctor-page-style-1">
-                                                    <div>Doctor Page - 1</div>
-                                                    <div class="submenu-arrow"><span class="submenu-arrow"></span>
-                                                    </div>
-                                                </a></div>
-                                            <div class="submenu-wrapper no-right-border"><a
-                                                    class="sub-menu-item w-inline-block"
-                                                    href="/department-pages/doctor-page-style-2">
-                                                    <div>Doctor Page - 2</div>
-                                                    <div class="submenu-arrow"><span class="submenu-arrow"></span>
-                                                    </div>
-                                                </a></div>
-                                            <div class="submenu-wrapper no-right-border"><a
-                                                    class="sub-menu-item w-inline-block"
-                                                    href="/department-pages/doctor-page-style-3">
-                                                    <div>Doctor Page - 3</div>
-                                                    <div class="submenu-arrow"><span class="submenu-arrow"></span>
-                                                    </div>
-                                                </a></div>
-                                            <div class="submenu-wrapper no-right-border"><a
-                                                    class="sub-menu-item w-inline-block"
-                                                    href="{{ route('doctors.show', 'dr-emily-thompson') }}">
-                                                    <div>Doctor Details Page</div>
-                                                    <div class="submenu-arrow"><span class="submenu-arrow"></span>
-                                                    </div>
-                                                </a></div>
+                                            @foreach($sharedDoctors as $doc)
+                                                <div class="submenu-wrapper no-right-border"><a
+                                                        class="sub-menu-item w-inline-block"
+                                                        href="{{ route('doctors.show', $doc->slug) }}">
+                                                        <div>{{ $doc->title }} {{ $doc->name }}</div>
+                                                        <div class="submenu-arrow"><span class="submenu-arrow"></span>
+                                                        </div>
+                                                    </a></div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </nav>
@@ -280,7 +261,7 @@
                                                 </a></div>
                                             <div class="submenu-wrapper no-right-border"><a
                                                     class="sub-menu-item w-inline-block"
-                                                    href="/department/gastroenterology">
+                                                    href="{{ route('departments.show', $sharedDepartments->first()?->slug ?? 'gastroenterology') }}">
                                                     <div>Deparment Details</div>
                                                     <div class="submenu-arrow"><span class="submenu-arrow"></span>
                                                     </div>
@@ -334,7 +315,7 @@
                                                 </a></div>
                                             <div class="submenu-wrapper no-right-border"><a
                                                     class="sub-menu-item w-inline-block"
-                                                    href="/blogs/navigating-seasonal-allergies-tips-for-a-sneezing-free-spring">
+                                                    href="{{ route('blog.show', \App\Models\BlogPost::first()?->slug ?? 'navigating-seasonal-allergies-tips-for-a-sneezing-free-spring') }}">
                                                     <div>Blog Details</div>
                                                     <div class="submenu-arrow"><span class="submenu-arrow"></span>
                                                     </div>
@@ -475,22 +456,22 @@
                             <div class="footer-block">
                                 <div class="footer-title">Quick Links</div>
                                 <div class="list-block"><a class="footer-link"
-                                        href="/department-pages/doctor-page-style-2">Find a Doctor</a><a
+                                        href="{{ route('about') }}">Find a Doctor</a><a
                                         class="footer-link"
-                                        href="/department-pages/doctor-page-style-3">Specialists</a><a
-                                        class="footer-link" href="/department-style-1">Departments</a><a
+                                        href="{{ route('about') }}">Specialists</a><a
+                                        class="footer-link" href="{{ route('departments.show', $sharedDepartments->first()?->slug ?? 'cardiology') }}">Departments</a><a
                                         class="footer-link" href="/utility/style-guide">Style-Guide</a><a
                                         class="footer-link" href="/utility/change-log">Change-Log</a><a
                                         class="footer-link" href="/utility/license">License</a></div>
                             </div>
                             <div class="footer-block">
                                 <div class="footer-title">Help Center</div>
-                                <div class="list-block"><a class="footer-link" href="/department-style-2">Doctor
+                                <div class="list-block"><a class="footer-link" href="{{ route('departments.show', $sharedDepartments->first()?->slug ?? 'cardiology') }}">Doctor
                                         Dept</a><a class="footer-link" href="/#services">Services</a><a
                                         class="footer-link"
-                                        href="/blog/navigating-seasonal-allergies-tips-for-a-sneezing-free-spring">Blog
+                                        href="{{ route('blog.show', \App\Models\BlogPost::first()?->slug ?? 'navigating-seasonal-allergies-tips-for-a-sneezing-free-spring') }}">Blog
                                         Details</a><a class="footer-link"
-                                        href="{{ route('doctors.show', 'dr-emily-thompson') }}">Doctor Details</a><a
+                                        href="{{ route('doctors.show', $sharedDoctors->first()?->slug ?? 'dr-emily-thompson') }}">Doctor Details</a><a
                                         class="footer-link" href="{{ route('faq') }}">FAQ - 1</a><a class="footer-link"
                                         href="{{ route('faq') }}">FAQ - 2</a></div>
                             </div>
